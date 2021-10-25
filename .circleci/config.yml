@@ -14,7 +14,7 @@ jobs:
           name: Build Selenium Hub
           command: docker-compose up -d
       - run:
-          image: cimg/openjdk:15.0
+          image: cimg/openjdk:11
           name: Run Tests
           command: mvn clean test -Dsurefire.suiteXmlFiles=RegressionParallel.xml
       - run:
