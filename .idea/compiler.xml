@@ -7,11 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaProjectDemo_CICD" />
+        <module name="JavaProjectDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="JavaProjectDemo_CICD" target="15" />
+      <module name="JavaProjectDemo" target="15" />
     </bytecodeTargetLevel>
   </component>
 </project>
