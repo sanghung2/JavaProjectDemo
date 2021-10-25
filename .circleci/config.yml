@@ -10,7 +10,6 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
-      - setup_remote_docker
       - docker/install-docker-compose
       - run:
           name: Build Selenium Hub
