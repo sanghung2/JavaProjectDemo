@@ -17,6 +17,6 @@ jobs:
           image: cimg/openjdk:15.0
           name: Run Tests
           command: mvn test
-      -run:
-        name: Tear Down Containers
-        command: docker-compose down
+      - run:
+          name: Tear Down Containers
+          command: docker-compose down
