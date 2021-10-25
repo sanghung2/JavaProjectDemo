@@ -10,8 +10,6 @@ jobs:
     working_directory: ~/project
     steps:
       - checkout
-      - docker/install-docker-compose:
-          version: "2.0.1"
       - run:
           name: Build Selenium Hub
           command: docker-compose up -d
