@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/10</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Oct 25 14:15:35 CDT 2021</td>
+<td>Started on:</td><td>Mon Oct 25 16:59:25 CDT 2021</td>
 </tr>
-<tr><td>Total time:</td><td>0 seconds (350 ms)</td>
+<tr><td>Total time:</td><td>0 seconds (38 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,62 +76,17 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD<br>Parameters: chrome</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace127696907", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace127696907'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1327478297", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1327478297'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -152,102 +107,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:549)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD<br>Parameters: chrome</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1440040393", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1440040393'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace205358048", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace205358048'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -268,102 +143,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD<br>Parameters: chrome</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1278337316", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1278337316'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace400271156", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace400271156'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -384,102 +179,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD<br>Parameters: chrome</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1874368588", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1874368588'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace982179428", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace982179428'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -500,102 +215,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD<br>Parameters: chrome</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace54169380", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace54169380'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace503056801", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace503056801'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -616,41 +251,6 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
@@ -665,82 +265,82 @@ Caused by: java.net.ConnectException: Connection refused
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.SetUp()'><b>SetUp</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.TearDown()'><b>TearDown</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.Terminate()'><b>Terminate</b><br>Test class: TestsCICD</td>
 <td></td>
-<td>-1635189335</td>
+<td>-1635199165</td>
 <td>TestsCICD@6b53e23f</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
@@ -752,62 +352,17 @@ Caused by: java.net.ConnectException: Connection refused
 </tr>
 <tr>
 <td title='TestsCICD.RandomTest()'><b>RandomTest</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace573654871", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace573654871'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace834360933", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace834360933'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -828,102 +383,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.RandomTest10()'><b>RandomTest10</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace812456534", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace812456534'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace6107547", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace6107547'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -944,102 +419,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.RandomTest2()'><b>RandomTest2</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1950980588", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1950980588'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1282902851", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1282902851'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -1060,102 +455,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.RandomTest3()'><b>RandomTest3</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1942969626", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1942969626'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1829782582", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1829782582'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -1176,102 +491,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.RandomTest4()'><b>RandomTest4</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1277718480", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1277718480'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace657138278", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace657138278'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -1292,102 +527,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.RandomTest5()'><b>RandomTest5</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2135614647", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2135614647'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1756485731", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1756485731'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -1408,102 +563,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.RandomTest6()'><b>RandomTest6</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace735218474", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace735218474'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace206094240", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace206094240'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -1524,102 +599,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.RandomTest7()'><b>RandomTest7</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace581200003", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace581200003'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1882902766", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1882902766'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -1640,102 +635,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.RandomTest8()'><b>RandomTest8</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace179576190", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace179576190'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1746043181", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1746043181'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -1756,102 +671,22 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>
 <tr>
 <td title='TestsCICD.RandomTest9()'><b>RandomTest9</b><br>Test class: TestsCICD</td>
-<td><div><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+<td><div><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
-... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace235040350", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace235040350'><pre>org.openqa.selenium.remote.UnreachableBrowserException: Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:573)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:213)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:131)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:144)
+... Removed 16 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace812289552", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace812289552'><pre>java.lang.NoSuchMethodError: &apos;org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])&apos;
+	at BrowserOptions.getChromeOptions(BrowserOptions.java:7)
+	at CapabilitiesOptions.getCapabilities(CapabilitiesOptions.java:8)
 	at BaseTest.SetUp(BaseTest.java:17)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
@@ -1872,41 +707,6 @@ Driver info: driver.version: RemoteWebDriver
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
 	at java.base/java.lang.Thread.run(Thread.java:832)
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:247)
-	at okhttp3.internal.connection.RealConnection.connect(RealConnection.java:165)
-	at okhttp3.internal.connection.StreamAllocation.findConnection(StreamAllocation.java:257)
-	at okhttp3.internal.connection.StreamAllocation.findHealthyConnection(StreamAllocation.java:135)
-	at okhttp3.internal.connection.StreamAllocation.newStream(StreamAllocation.java:114)
-	at okhttp3.internal.connection.ConnectInterceptor.intercept(ConnectInterceptor.java:42)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.cache.CacheInterceptor.intercept(CacheInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.internal.http.BridgeInterceptor.intercept(BridgeInterceptor.java:93)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RetryAndFollowUpInterceptor.intercept(RetryAndFollowUpInterceptor.java:126)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:147)
-	at okhttp3.internal.http.RealInterceptorChain.proceed(RealInterceptorChain.java:121)
-	at okhttp3.RealCall.getResponseWithInterceptorChain(RealCall.java:200)
-	at okhttp3.RealCall.execute(RealCall.java:77)
-	at org.openqa.selenium.remote.internal.OkHttpClient.execute(OkHttpClient.java:103)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:105)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:74)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:136)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	... 23 more
-Caused by: java.net.ConnectException: Connection refused
-	at java.base/sun.nio.ch.Net.pollConnect(Native Method)
-	at java.base/sun.nio.ch.Net.pollConnectNow(Net.java:660)
-	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:542)
-	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:597)
-	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
-	at java.base/java.net.Socket.connect(Socket.java:648)
-	at okhttp3.internal.platform.Platform.connectSocket(Platform.java:129)
-	at okhttp3.internal.connection.RealConnection.connectSocket(RealConnection.java:245)
-	... 45 more
 </pre></div></td>
 <td>0</td>
 <td>TestsCICD@6b53e23f</td></tr>

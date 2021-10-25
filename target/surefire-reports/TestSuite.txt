@@ -1,49 +1,19 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 31, Failures: 5, Errors: 0, Skipped: 26, Time elapsed: 0.643 s <<< FAILURE! - in TestSuite
-TestsCICD.SetUp[chrome](0)  Time elapsed: 0.493 s  <<< FAILURE!
-org.openqa.selenium.remote.UnreachableBrowserException: 
-Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Sangs-MBP', ip: '2600:1700:eec0:7870:0:0:0:722%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.1'
-Driver info: driver.version: RemoteWebDriver
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused
+Tests run: 31, Failures: 5, Errors: 0, Skipped: 26, Time elapsed: 0.346 s <<< FAILURE! - in TestSuite
+TestsCICD.SetUp[chrome](0)  Time elapsed: 0.192 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
 
-TestsCICD.SetUp[chrome](0)  Time elapsed: 0.493 s  <<< FAILURE!
-org.openqa.selenium.remote.UnreachableBrowserException: 
-Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Sangs-MBP', ip: '2600:1700:eec0:7870:0:0:0:722%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.1'
-Driver info: driver.version: RemoteWebDriver
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused
+TestsCICD.SetUp[chrome](0)  Time elapsed: 0.192 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
 
-TestsCICD.SetUp[chrome](0)  Time elapsed: 0.494 s  <<< FAILURE!
-org.openqa.selenium.remote.UnreachableBrowserException: 
-Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Sangs-MBP', ip: '2600:1700:eec0:7870:0:0:0:722%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.1'
-Driver info: driver.version: RemoteWebDriver
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused
+TestsCICD.SetUp[chrome](0)  Time elapsed: 0.192 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
 
-TestsCICD.SetUp[chrome](0)  Time elapsed: 0.495 s  <<< FAILURE!
-org.openqa.selenium.remote.UnreachableBrowserException: 
-Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Sangs-MBP', ip: '2600:1700:eec0:7870:0:0:0:722%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.1'
-Driver info: driver.version: RemoteWebDriver
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused
+TestsCICD.SetUp[chrome](0)  Time elapsed: 0.192 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
 
-TestsCICD.SetUp[chrome](0)  Time elapsed: 0.496 s  <<< FAILURE!
-org.openqa.selenium.remote.UnreachableBrowserException: 
-Could not start a new session. Possible causes are invalid address of the remote server or browser start-up failure.
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'Sangs-MBP', ip: '2600:1700:eec0:7870:0:0:0:722%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '10.16', java.version: '15.0.1'
-Driver info: driver.version: RemoteWebDriver
-Caused by: java.net.ConnectException: Failed to connect to localhost/[0:0:0:0:0:0:0:1]:4444
-Caused by: java.net.ConnectException: Connection refused
+TestsCICD.SetUp[chrome](0)  Time elapsed: 0.193 s  <<< FAILURE!
+java.lang.NoSuchMethodError: 'org.openqa.selenium.chromium.ChromiumOptions org.openqa.selenium.chrome.ChromeOptions.addArguments(java.lang.String[])'
 
