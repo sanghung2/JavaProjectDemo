@@ -16,7 +16,7 @@ jobs:
       - run:
           image: cimg/openjdk:15.0
           name: Run Tests
-          command: mvn test
+          command: mvn clean test -Dsurefire.suiteXmlFiles=RegressionParallel.xml
       - run:
           name: Tear Down Containers
           command: docker-compose down
