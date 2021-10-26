@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">10 methods,   10 passed</span>
+                    <span class="method-stats">10 methods, 1 failed,   9 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="TestsCICD" class="method navigator-link" hash-for-method="RandomTest10">RandomTest10</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,11 +117,6 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="TestsCICD" class="method navigator-link" hash-for-method="RandomTest">RandomTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="TestsCICD" class="method navigator-link" hash-for-method="RandomTest10">RandomTest10</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -162,6 +171,46 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">TestsCICD</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="RandomTest10">
+                  </a> <!-- RandomTest10 -->
+                  <span class="method-name">RandomTest10</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;#hello\ fail&quot;}
+  (Session info: chrome=78.0.3904.70)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Sangs-MBP&apos;, ip: &apos;2600:1700:eec0:7870:0:0:0:722%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.16&apos;, java.version: &apos;15.0.1&apos;
+Driver info: org.openqa.selenium.remote.RemoteWebDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.70, chrome: {chromedriverVersion: 78.0.3904.70 (edb9c9f3de024..., userDataDir: /tmp/.com.google.Chrome.UV9r6j}, goog:chromeOptions: {debuggerAddress: localhost:42687}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: LINUX, platformName: LINUX, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webdriver.remote.sessionid: b0800ae39adb2ae89d5b1632427...}
+Session ID: b0800ae39adb2ae89d5b163242711994
+*** Element info: {Using=id, value=hello fail}
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+	at org.openqa.selenium.By$ById.findElement(By.java:188)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at Utilities.ClickElementByID(Utilities.java:6)
+	at TestsCICD.RandomTest10(TestsCICD.java:64)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+... Removed 17 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -173,13 +222,6 @@
                   <a name="RandomTest">
                   </a> <!-- RandomTest -->
                   <span class="method-name">RandomTest</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="RandomTest10">
-                  </a> <!-- RandomTest10 -->
-                  <span class="method-name">RandomTest10</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -310,48 +352,48 @@ data.addRows(10);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'RandomTest2')
 data.setCell(0, 2, 'TestsCICD')
-data.setCell(0, 3, 1648);
+data.setCell(0, 3, 1425);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'RandomTest5')
+data.setCell(1, 1, 'RandomTest8')
 data.setCell(1, 2, 'TestsCICD')
-data.setCell(1, 3, 1156);
+data.setCell(1, 3, 929);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'RandomTest4')
+data.setCell(2, 1, 'RandomTest6')
 data.setCell(2, 2, 'TestsCICD')
-data.setCell(2, 3, 1139);
+data.setCell(2, 3, 893);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'RandomTest')
 data.setCell(3, 2, 'TestsCICD')
-data.setCell(3, 3, 1109);
+data.setCell(3, 3, 847);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'RandomTest6')
+data.setCell(4, 1, 'RandomTest3')
 data.setCell(4, 2, 'TestsCICD')
-data.setCell(4, 3, 1064);
+data.setCell(4, 3, 829);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'RandomTest8')
+data.setCell(5, 1, 'RandomTest4')
 data.setCell(5, 2, 'TestsCICD')
-data.setCell(5, 3, 1063);
+data.setCell(5, 3, 829);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'RandomTest3')
+data.setCell(6, 1, 'RandomTest7')
 data.setCell(6, 2, 'TestsCICD')
-data.setCell(6, 3, 1008);
+data.setCell(6, 3, 778);
 data.setCell(7, 0, 7)
 data.setCell(7, 1, 'RandomTest9')
 data.setCell(7, 2, 'TestsCICD')
-data.setCell(7, 3, 960);
+data.setCell(7, 3, 738);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'RandomTest7')
+data.setCell(8, 1, 'RandomTest5')
 data.setCell(8, 2, 'TestsCICD')
-data.setCell(8, 3, 921);
+data.setCell(8, 3, 731);
 data.setCell(9, 0, 9)
 data.setCell(9, 1, 'RandomTest10')
 data.setCell(9, 2, 'TestsCICD')
-data.setCell(9, 3, 626);
+data.setCell(9, 3, 520);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 4 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -400,107 +442,109 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">RandomTest4</span>
-                <span class="method-start">1381 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">RandomTest3</span>
-                <span class="method-start">1385 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">RandomTest2</span>
-                <span class="method-start">1413 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">RandomTest</span>
-                <span class="method-start">1547 ms</span>
+                <span class="method-start">1113 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">RandomTest5</span>
-                <span class="method-start">1610 ms</span>
+                <span class="method-start">1334 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">RandomTest3</span>
+                <span class="method-start">1366 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">RandomTest2</span>
+                <span class="method-start">1369 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">RandomTest</span>
+                <span class="method-start">1377 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">TearDown</span>
-                <span class="method-start">2396 ms</span>
+                <span class="method-start">1944 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">SetUp(chrome)</span>
-                <span class="method-start">2469 ms</span>
+                <span class="method-start">2010 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method after">
                 <span class="method-name">TearDown</span>
-                <span class="method-start">2521 ms</span>
+                <span class="method-start">2065 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">SetUp(chrome)</span>
-                <span class="method-start">2597 ms</span>
+                <span class="method-start">2131 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method after">
                 <span class="method-name">TearDown</span>
-                <span class="method-start">2657 ms</span>
+                <span class="method-start">2195 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">2224 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">SetUp(chrome)</span>
-                <span class="method-start">2727 ms</span>
+                <span class="method-start">2267 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">SetUp(chrome)</span>
+                <span class="method-start">2283 ms</span>
               </div> <!-- configuration-method before -->
               <div class="configuration-method after">
                 <span class="method-name">TearDown</span>
-                <span class="method-start">2766 ms</span>
+                <span class="method-start">2794 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">SetUp(chrome)</span>
-                <span class="method-start">2833 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="configuration-method after">
-                <span class="method-name">TearDown</span>
-                <span class="method-start">3062 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">SetUp(chrome)</span>
-                <span class="method-start">3133 ms</span>
+                <span class="method-start">2910 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">RandomTest6</span>
-                <span class="method-start">3660 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">RandomTest7</span>
-                <span class="method-start">3753 ms</span>
+                <span class="method-start">2961 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">RandomTest8</span>
-                <span class="method-start">3955 ms</span>
+                <span class="method-start">3155 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">RandomTest7</span>
+                <span class="method-start">3185 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">RandomTest9</span>
-                <span class="method-start">3975 ms</span>
+                <span class="method-start">3495 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">3854 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">3963 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">4084 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">4233 ms</span>
+              </div> <!-- configuration-method after -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">RandomTest10</span>
-                <span class="method-start">4615 ms</span>
+                <span class="method-start">4243 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">TearDown</span>
-                <span class="method-start">4674 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">TearDown</span>
-                <span class="method-start">4724 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">TearDown</span>
-                <span class="method-start">4936 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">TearDown</span>
-                <span class="method-start">5018 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method after">
-                <span class="method-name">TearDown</span>
-                <span class="method-start">5242 ms</span>
+                <span class="method-start">4769 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">Terminate</span>
-                <span class="method-start">5302 ms</span>
+                <span class="method-start">4827 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
