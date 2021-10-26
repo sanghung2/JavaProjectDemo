@@ -4,6 +4,14 @@ orbs:
   maven: circleci/maven@1.2.0
   docker: circleci/docker@1.7.0
 
+workflow:
+  build-and-test:
+    jobs:
+      - build
+      - test
+          requires:
+            - build
+
 jobs:
   build:
     machine: true
@@ -13,8 +21,11 @@ jobs:
       - run:
           name: Build Selenium Hub
           command: docker-compose up -d
+  test:
+    docker:
+      - image: cimg/openjdk:15.0
+    steps:
       - run:
-          image: cimg/openjdk:15.0
           name: Run Tests
           command: mvn clean test -Dsurefire.suiteXmlFiles=regression.xml
       - run:
