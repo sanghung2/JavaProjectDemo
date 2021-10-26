@@ -8,9 +8,6 @@ workflows:
   build-and-test:
     jobs:
       - build
-      - test:
-          requires:
-            - build
 
 jobs:
   build:
@@ -21,12 +18,8 @@ jobs:
       - run:
           name: Build Selenium Hub
           command: docker-compose up -d
-  test:
-    docker:
-      - image: cimg/openjdk:15.0
-    steps:
-      - checkout
       - run:
+          image: cimg/openjdk:15.0
           name: Run Tests
           command: mvn clean test -Dsurefire.suiteXmlFiles=regression.xml
       - run:
