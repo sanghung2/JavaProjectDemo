@@ -5,18 +5,18 @@
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="TestsCICD">
-                <methods>
-                    <include name="RandomTest"/>
-                    <include name="RandomTest2"/>
-                    <include name="RandomTest3"/>
-                    <include name="RandomTest4"/>
-                    <include name="RandomTest5"/>
-                    <include name="RandomTest6"/>
-                    <include name="RandomTest7"/>
-                    <include name="RandomTest8"/>
-                    <include name="RandomTest9"/>
-                    <include name="RandomTest10"/>
-                </methods>
+<!--                <methods>-->
+<!--                    <include name="RandomTest"/>-->
+<!--                    <include name="RandomTest2"/>-->
+<!--                    <include name="RandomTest3"/>-->
+<!--                    <include name="RandomTest4"/>-->
+<!--                    <include name="RandomTest5"/>-->
+<!--                    <include name="RandomTest6"/>-->
+<!--                    <include name="RandomTest7"/>-->
+<!--                    <include name="RandomTest8"/>-->
+<!--                    <include name="RandomTest9"/>-->
+<!--                    <include name="RandomTest10"/>-->
+<!--                </methods>-->
             </class>
         </classes>
     </test> <!-- First Test -->

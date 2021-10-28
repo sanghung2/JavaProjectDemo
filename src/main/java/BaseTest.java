@@ -14,11 +14,11 @@ public class BaseTest {
     @Parameters(value = {"browser"})
     public void SetUp(String browser) throws MalformedURLException {
         //Using local Docker container
-//        driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-//                capabilitiesOptions.getCapabilities(browser)));
-        //Using Kubernetes cluster
-        driver.set(new RemoteWebDriver(new URL("http://192.168.64.6:32518/wd/hub"),
+        driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
                 capabilitiesOptions.getCapabilities(browser)));
+        //Using Kubernetes cluster
+//        driver.set(new RemoteWebDriver(new URL("http://192.168.64.6:32518/wd/hub"),
+//                capabilitiesOptions.getCapabilities(browser)));
         getDriver().manage().window().maximize();
     }
 
