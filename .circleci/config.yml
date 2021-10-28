@@ -26,4 +26,4 @@ jobs:
           name: Tear Down Containers
           command: docker-compose down
       - store_test_results:
-          path: test-results
+          path: target/surefire-reports
