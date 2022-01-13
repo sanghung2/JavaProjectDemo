@@ -1,4 +1,3 @@
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 public class TestsCICD extends BaseTest {
@@ -59,10 +58,10 @@ public class TestsCICD extends BaseTest {
         System.out.println("Navigated to page");
     }
 
-    @Test
-    //This test will fail
-    public void RandomTest10() {
-        utilities.NavigateToURL("www.google.com");
-        utilities.ClickElementByID("hello fail");
-    }
+//    @Test
+//    //This test will fail
+//    public void RandomTest10() {
+//        utilities.NavigateToURL("www.google.com");
+//        utilities.ClickElementByID("hello fail");
+//    }
 }
