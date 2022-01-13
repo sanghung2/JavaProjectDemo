@@ -19,5 +19,5 @@
 <!--                </methods>-->
             </class>
         </classes>
-    </test> <!-- First Test -->
-</suite> <!-- Suite -->
+    </test>
+</suite>

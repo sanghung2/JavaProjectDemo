@@ -37,6 +37,8 @@ public class TestsCICD extends BaseTest {
     @Test
     public void RandomTest6() {
         utilities.NavigateToURL("www.google.com");
+        //This will cause the test to fail since there is no ID's by "hello fail"
+        utilities.ClickElementByID("hello fail");
         System.out.println("Navigated to page");
     }
 
@@ -61,7 +63,6 @@ public class TestsCICD extends BaseTest {
     @Test
     public void RandomTest10() {
         utilities.NavigateToURL("www.google.com");
-//        utilities.ClickElementByID("hello fail");
         System.out.println("Navigated to page");
     }
 }

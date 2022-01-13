@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: selenium-node-chrome-rep
+  name: selenium-node-chrome
 spec:
   replicas: 3
   selector:
