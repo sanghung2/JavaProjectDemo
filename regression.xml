@@ -6,7 +6,7 @@
         <classes>
             <class name="TestsCICD">
 <!--                <methods>-->
-<!--                    <include name="RandomTest"/>-->
+<!--                    <include name="RandomTest10"/>-->
 <!--                </methods>-->
             </class>
         </classes>
