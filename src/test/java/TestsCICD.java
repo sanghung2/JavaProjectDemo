@@ -58,10 +58,11 @@ public class TestsCICD extends BaseTest {
         System.out.println("Navigated to page");
     }
 
-    @Test
-    public void RandomTest10() {
-        utilities.NavigateToURL("www.google.com");
+//    @Test
+//    //This test will fail
+//    public void RandomTest10() {
+//        utilities.NavigateToURL("www.google.com");
 //        utilities.ClickElementByID("hello fail");
-        System.out.println("Navigated to page");
-    }
+//        System.out.println("Navigated to page");
+//    }
 }
