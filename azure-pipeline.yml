@@ -6,7 +6,7 @@ stages:
   - stage: Build
     jobs:
       - job:
-        displayName: Build Selenium-Hub And Run Tests
+        displayName: Build and Run Tests
         steps:
           - task: DockerCompose@0
             displayName: Run Docker Command
