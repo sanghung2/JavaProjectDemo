@@ -1,0 +1,16 @@
+trigger:
+  branches:
+    include:
+      - azure-pipeline
+stages:
+  - stage: Build
+    jobs:
+      - job:
+        displayName: Build Selenium-Hub
+        steps:
+          - task: DockerCompose@0
+            displayName: Run Docker Compose Command
+            inputs:
+              containerregistrytype: Container Registry
+              dockerComposeFile: docker-compose.yml
+              dockerComposeCommand: 'up -d'
