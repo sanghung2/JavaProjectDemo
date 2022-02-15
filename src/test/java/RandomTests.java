@@ -1,6 +1,6 @@
 import org.testng.annotations.Test;
 
-public class TestsCICD extends BaseTest {
+public class RandomTests extends BaseTest {
 
    Utilities utilities = new Utilities();
 

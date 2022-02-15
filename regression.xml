@@ -4,9 +4,9 @@
     <test name="com.regression" parallel="methods" thread-count="5">
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="TestsCICD">
+            <class name="RandomTests">
 <!--                <methods>-->
-<!--                    <include name="RandomTest10"/>-->
+
 <!--                </methods>-->
             </class>
         </classes>
