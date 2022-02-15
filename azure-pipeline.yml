@@ -1,17 +1,28 @@
 trigger:
-  branches:
-    include:
-      - azure-pipeline
+  - azure-pipeline
+pool:
+  vmImage: 'ubuntu-latest'
 stages:
   - stage: Build
     jobs:
       - job:
-        displayName: Build Selenium-Hub
+        displayName: Build Selenium-Hub And Run Tests
         steps:
           - task: DockerCompose@0
-            displayName: Run Docker Compose Command
+            displayName: Run Docker Command
             inputs:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
               dockerComposeCommand: 'up -d'
-
+          - task: Maven@3
+            displayName: Run Maven Command
+            inputs:
+              mavenPomFile: 'pom.xml'
+              options: 'mvn clean test -Dsurefire.suiteXmlFiles=regression.xml'
+              publishJUnitResults: true
+              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+              javaHomeOption: 'JDKVersion'
+              mavenVersionOption: 'Default'
+              mavenAuthenticateFeed: false
+              effectivePomSkip: false
+              sonarQubeRunAnalysis: false
