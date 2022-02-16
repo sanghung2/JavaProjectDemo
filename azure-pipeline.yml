@@ -14,15 +14,33 @@ stages:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
               dockerComposeCommand: 'up -d'
+          - task: SonarQubePrepare@5
+            inputs:
+              SonarQube: 'Sonarqube'
+              scannerMode: 'Other'
+              extraProperties: |
+              # Additional properties that will be passed to the scanner,
+              # Put one key=value per line, example:
+              # sonar.exclusions=**/*.bin
+              sonar.projectKey=SonarCubeExample_SonarCubeExample
+          - task: JavaToolInstaller@0
+            inputs:
+              versionSpec: '15.0'
+              jdkArchitectureOption: 'x64'
+              jdkSourceOption: 'PreInstalled'
           - task: Maven@3
-            displayName: Run Maven Command
             inputs:
               mavenPomFile: 'pom.xml'
+              goals: 'test'
               options: 'mvn clean test -Dsurefire.suiteXmlFiles=regression.xml'
               publishJUnitResults: true
-              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+              testResultsFiles: '**/surefire-reports/*.xml'
               javaHomeOption: 'JDKVersion'
               mavenVersionOption: 'Default'
               mavenAuthenticateFeed: false
               effectivePomSkip: false
-              sonarQubeRunAnalysis: false
+              sonarQubeRunAnalysis: true
+              sqMavenPluginVersionChoice: 'latest'
+          - task: SonarQubePublish@5
+            inputs:
+              pollingTimeoutSec: '300'
