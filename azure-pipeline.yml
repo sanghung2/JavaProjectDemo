@@ -21,8 +21,7 @@ stages:
               extraProperties: |
               # Additional properties that will be passed to the scanner,
               # Put one key=value per line, example:
-              # sonar.exclusions=**/*.bin
-              sonar.projectKey=SonarCubeExample_SonarCubeExample
+              # sonar.exclusions=**/*.binsonar.projectKey=SonarCubeExample_SonarCubeExample
           - task: JavaToolInstaller@0
             inputs:
               versionSpec: '15.0'
