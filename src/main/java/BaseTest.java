@@ -20,7 +20,7 @@ public class BaseTest {
         //Using Kubernetes to run tests on Selenium Grid
 //        driver.set(new RemoteWebDriver(new URL("http://192.168.64.6:32518/wd/hub"),
 //                capabilitiesOptions.getCapabilities(browser)));
-        getDriver().manage().window().maximize();
+//        getDriver().manage().window().maximize();
     }
 
     public WebDriver getDriver() {
@@ -30,10 +30,6 @@ public class BaseTest {
     @AfterMethod
     public void TearDown() {
         getDriver().quit();
-    }
-
-    @AfterClass void Terminate() {
         driver.remove();
     }
 }
-
