@@ -19,7 +19,7 @@ stages:
             inputs:
               mavenPomFile: 'pom.xml'
               goals: 'test'
-              options: 'mvn clean test -Dsurefire.suiteXmlFiles=regression.xml'
+              options: 'clean test -Dsurefire.suiteXmlFiles=regression.xml'
               publishJUnitResults: true
               testResultsFiles: '**/surefire-reports/*.xml'
               javaHomeOption: 'JDKVersion'
