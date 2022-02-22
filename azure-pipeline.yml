@@ -43,5 +43,3 @@ stages:
           - task: SonarQubePublish@5
             inputs:
               pollingTimeoutSec: '300'
-
-#clean test -Dsurefire.suiteXmLFiles=regression.xml sonar:sonar -Dsonar.login=65da9114f5f17e274abe3a7a1af0b79dd81159ab
