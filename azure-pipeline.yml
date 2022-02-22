@@ -24,7 +24,7 @@ stages:
             inputs:
               mavenPomFile: 'pom.xml'
               goals: 'test'
-              options: 'clean test -Dsurefire.suiteXmLFiles=regression.xml sonar:sonar -Dsonar.login=65da9114f5f17e274abe3a7a1af0b79dd81159ab'
+              options: 'clean test -Dsurefire.suiteXmLFiles=regression.xml'
               publishJUnitResults: true
               testResultsFiles: '**/surefire-reports/*.xml'
               javaHomeOption: 'JDKVersion'
