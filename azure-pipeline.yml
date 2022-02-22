@@ -8,12 +8,12 @@ stages:
       - job:
         displayName: Build and Run Tests
         steps:
-#          - task: DockerCompose@0
-#            displayName: Run Docker Command
-#            inputs:
-#              containerregistrytype: Container Registry
-#              dockerComposeFile: docker-compose.yml
-#              dockerComposeCommand: 'up -d'
+          - task: DockerCompose@0
+            displayName: Run Docker Command
+            inputs:
+              containerregistrytype: Container Registry
+              dockerComposeFile: docker-compose.yml
+              dockerComposeCommand: 'up -d'
           - task: SonarQubePrepare@5
             inputs:
               SonarQube: 'Sonarqube'
