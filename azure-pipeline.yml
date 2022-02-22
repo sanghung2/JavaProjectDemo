@@ -14,10 +14,6 @@ stages:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
               dockerComposeCommand: 'up -d'
-          - task: SonarQubePrepare@5
-            inputs:
-              SonarQube: 'Sonarqube'
-              scannerMode: 'Other'
           - task: Maven@3
             inputs:
               mavenPomFile: 'pom.xml'
@@ -29,8 +25,12 @@ stages:
               mavenVersionOption: 'Default'
               mavenAuthenticateFeed: false
               effectivePomSkip: false
-              sonarQubeRunAnalysis: true
+              sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
+          - task: SonarQubePrepare@5
+            inputs:
+              SonarQube: 'Sonarqube'
+              scannerMode: 'Other'
           - task: SonarQubePublish@5
             inputs:
               pollingTimeoutSec: '300'

@@ -2,5 +2,5 @@ projectKey=JavaProjectDemo
 serverUrl=http://localhost:9000
 serverVersion=9.3.0.51899
 dashboardUrl=http://localhost:9000/dashboard?id=JavaProjectDemo
-ceTaskId=AX8e2Bb-FgLLyLOTG4Q5
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AX8e2Bb-FgLLyLOTG4Q5
+ceTaskId=AX8fT5oPAoSLFqGjmcv4
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AX8fT5oPAoSLFqGjmcv4
