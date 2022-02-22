@@ -27,10 +27,17 @@ stages:
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
-          - task: SonarQubePrepare@5
-            inputs:
-              SonarQube: 'Sonarqube'
-              scannerMode: 'Other'
-          - task: SonarQubePublish@5
-            inputs:
-              pollingTimeoutSec: '300'
+  - stage: Sonarqube
+    jobs:
+      - job:
+          displayName: Run Sonaeqube Analysis
+          steps:
+            - task: SonarQubePrepare@5
+              inputs:
+                SonarQube: 'Sonarqube'
+                scannerMode: CLI
+                configFile: sonar-project.properties
+            - task: SonarQubeAnalyze@4
+            - task: SonarQubePublish@5
+              inputs:
+                pollingTimeoutSec: '300'
