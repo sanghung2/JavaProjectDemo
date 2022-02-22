@@ -25,7 +25,7 @@ stages:
             displayName: Build an image
             inputs:
               repository: $(imageName)
-              command: docker build -t dockeragent:latest .
+              command: build
               Dockerfile: Dockerfile
   - stage: Build
     jobs:
