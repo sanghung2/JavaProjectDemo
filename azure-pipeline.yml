@@ -5,7 +5,7 @@ pool:
 variables:
   imageName: dockeragent:latest
 stages:
-  - stage: Build LinuxAgent
+  - stage: Docker Image
     displayName: Build image
     jobs:
       - job: Build
