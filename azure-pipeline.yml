@@ -25,6 +25,11 @@ stages:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose-sonar.yml
               dockerComposeCommand: '-f docker-compose-sonar.yml build'
+          - task: SonarQubePrepare@5
+            inputs:
+              SonarQube: 'Sonarqube-pipeline'
+              scannerMode: CLI
+              configFile: sonar-scanner.properties
           - task: DockerCompose@0
             displayName: Build SonarScanner
             inputs:
@@ -45,26 +50,7 @@ stages:
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
-          - task: Maven@3
-            displayName: Run Tests
+          - task: SonarQubeAnalyze@4
+          - task: SonarQubePublish@5
             inputs:
-              mavenPomFile: 'pom.xml'
-              goals: 'upload to sonarqube'
-              options: 'sonar:sonar -Dsonar.host.url=http://localhost:9000 -Dsonar.login=65da9114f5f17e274abe3a7a1af0b79dd81159ab'
-              publishJUnitResults: true
-              testResultsFiles: '**/surefire-reports/*.xml'
-              javaHomeOption: 'JDKVersion'
-              mavenVersionOption: 'Default'
-              mavenAuthenticateFeed: false
-              effectivePomSkip: false
-              sonarQubeRunAnalysis: false
-              sqMavenPluginVersionChoice: 'latest'
-#          - task: SonarQubePrepare@5
-#            inputs:
-#              SonarQube: 'Sonarqube-pipeline'
-#              scannerMode: CLI
-#              configFile: sonar-scanner.properties
-#          - task: SonarQubeAnalyze@4
-#          - task: SonarQubePublish@5
-#            inputs:
-#              pollingTimeoutSec: '300'
+              pollingTimeoutSec: '300'
