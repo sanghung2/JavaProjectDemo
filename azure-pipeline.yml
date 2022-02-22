@@ -6,7 +6,6 @@ variables:
   imageName: dockeragent:latest
 stages:
   - stage: Docker Image
-    displayName: Build image
     jobs:
       - job: Build
         displayName: Build and push Docker image
