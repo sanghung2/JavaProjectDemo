@@ -5,7 +5,7 @@ pool:
 variables:
   imageName: dockeragent:latest
 stages:
-  - stage: Docker Image
+  - stage: DockerImage
     jobs:
       - job: Build
         displayName: Build and push Docker image
@@ -17,7 +17,7 @@ stages:
               dockerRegistryEndpoint: 'Docker Hub'
               command: 'Build an image'
               dockerFile: 'Utilities/**/Dockerfile'
-              imageName: 'dockeragent:latest'
+              imageName: '$(imageName)'
               includeLatestTag: true
               useDefaultContext: false
               buildContext: '.'
