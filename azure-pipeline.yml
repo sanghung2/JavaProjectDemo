@@ -38,7 +38,7 @@ stages:
             inputs:
               SonarQube: 'sonarqube'
               scannerMode: CLI
-              configFile: sonar-project.properties
+              configFile: sonar-scanner.properties
           - task: SonarQubeAnalyze@4
           - task: SonarQubePublish@5
             inputs:
