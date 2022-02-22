@@ -15,12 +15,13 @@ stages:
 #              command: build
 #              Dockerfile: Dockerfile
           - task: DockerCompose@0
-            displayName: Run Docker Command
+            displayName: Build SeleniumGrid & SonarQube
             inputs:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
               dockerComposeCommand: 'up -d'
           - task: Maven@3
+            displayName: Run Tests
             inputs:
               mavenPomFile: 'pom.xml'
               goals: 'test'
@@ -33,14 +34,14 @@ stages:
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
-#          - task: SonarQubePrepare@5
-#            inputs:
-#              SonarQube: 'sonarqube'
-#              scannerMode: CLI
-#              configFile: sonar-project.properties
-#          - task: SonarQubeAnalyze@4
-#          - task: SonarQubePublish@5
-#            inputs:
-#              pollingTimeoutSec: '300'
+          - task: SonarQubePrepare@5
+            inputs:
+              SonarQube: 'sonarqube'
+              scannerMode: CLI
+              configFile: sonar-project.properties
+          - task: SonarQubeAnalyze@4
+          - task: SonarQubePublish@5
+            inputs:
+              pollingTimeoutSec: '300'
 
 #clean test -Dsurefire.suiteXmLFiles=regression.xml sonar:sonar -Dsonar.login=65da9114f5f17e274abe3a7a1af0b79dd81159ab
