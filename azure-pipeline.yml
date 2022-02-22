@@ -29,7 +29,7 @@ stages:
               sqMavenPluginVersionChoice: 'latest'
           - task: SonarQubePrepare@5
             inputs:
-              SonarQube: 'http://localhost:9000'
+              SonarQube: 'Sonarqube'
               scannerMode: 'Other'
           - task: SonarQubePublish@5
             inputs:
