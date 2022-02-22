@@ -2,7 +2,26 @@ trigger:
   - azure-pipeline
 pool:
   vmImage: 'ubuntu-latest'
+variables:
+  imageName: dockeragent:latest
 stages:
+  - stage: Build LinuxAgent
+    displayName: Build image
+    jobs:
+      - job: Build
+        displayName: Build and push Docker image
+        steps:
+          - task: Docker@1
+            displayName: 'Build the Docker image'
+            inputs:
+              containerregistrytype: 'Container Registry'
+              dockerRegistryEndpoint: 'Docker Hub'
+              command: 'Build an image'
+              dockerFile: 'Utilities/**/Dockerfile'
+              imageName: '$(ImageName)'
+              includeLatestTag: true
+              useDefaultContext: false
+              buildContext: '.'
   - stage: Build
     jobs:
       - job:
