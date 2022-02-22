@@ -47,7 +47,7 @@ stages:
               sqMavenPluginVersionChoice: 'latest'
           - task: SonarQubePrepare@5
             inputs:
-              SonarQube: 'sonarqube-pipeline'
+              SonarQube: 'Sonarqube-pipeline'
               scannerMode: CLI
               configFile: sonar-scanner.properties
           - task: SonarQubeAnalyze@4
