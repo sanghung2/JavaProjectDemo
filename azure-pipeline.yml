@@ -3,7 +3,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 variables:
-  imageName: 'dockeragent:$(Build.BuildId)'
+  imageName: dockeragent:1
 stages:
 #  - stage: DockerImage
 #    jobs:
@@ -21,12 +21,12 @@ stages:
       - job:
         displayName: Build and Run Tests
         steps:
-#          - task: Docker@2
-#            displayName: Build an image
-#            inputs:
-#              repository: dockeragent
-#              command: build
-#              Dockerfile: Dockerfile
+          - task: Docker@2
+            displayName: Build an image
+            inputs:
+              repository: $(imageName)
+              command: build
+              Dockerfile: Dockerfile
           - task: DockerCompose@0
             displayName: Run Docker Command
             inputs:
@@ -44,7 +44,7 @@ stages:
               mavenVersionOption: 'Default'
               mavenAuthenticateFeed: false
               effectivePomSkip: false
-              sonarQubeRunAnalysis: true
+              sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
           - task: SonarQubePrepare@5
             inputs:
