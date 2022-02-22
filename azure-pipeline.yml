@@ -16,7 +16,7 @@ stages:
 #              containerregistrytype: 'Container Registry'
 #              dockerRegistryEndpoint: 'Docker Hub'
 #              command: 'Build an im'
-#              dockerFile: 'Utilities/**/Dockerfile'
+#              dockerFile: '**/Dockerfile'
 #              imageName: '$(imageName)'
 #              includeLatestTag: true
 #              useDefaultContext: false
@@ -26,7 +26,7 @@ stages:
             inputs:
               repository: $(imageName)
               command: build
-              Dockerfile: Utilities/**/Dockerfile
+              Dockerfile: Dockerfile
   - stage: Build
     jobs:
       - job:
