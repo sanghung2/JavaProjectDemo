@@ -38,25 +38,6 @@ stages:
 #              repository: dockeragent
 #              command: build
 #              Dockerfile: Dockerfile
-          - task: Docker@1
-            displayName: 'Build the Docker image'
-            inputs:
-              containerregistrytype: 'Container Registry'
-              dockerRegistryEndpoint: 'Docker Hub'
-              command: 'Build an image'
-              dockerFile: '**/Dockerfile'
-              imageName: '$(ImageName)'
-              includeLatestTag: true
-              useDefaultContext: false
-              buildContext: '.'
-          - task: Docker@1
-            displayName: 'Push the Docker image to Dockerhub'
-            inputs:
-              containerregistrytype: 'Container Registry'
-              dockerRegistryEndpoint: 'Docker Hub'
-              command: 'Push an image'
-              imageName: '$(imageName)'
-            condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
           - task: DockerCompose@0
             displayName: Run Docker Command
             inputs:
@@ -74,11 +55,11 @@ stages:
               mavenVersionOption: 'Default'
               mavenAuthenticateFeed: false
               effectivePomSkip: false
-              sonarQubeRunAnalysis: false
+              sonarQubeRunAnalysis: true
               sqMavenPluginVersionChoice: 'latest'
           - task: SonarQubePrepare@5
             inputs:
-              SonarQube: 'Sonarqube'
+              SonarQube: 'sonarqube'
               scannerMode: CLI
               configFile: sonar-project.properties
           - task: SonarQubeAnalyze@4
