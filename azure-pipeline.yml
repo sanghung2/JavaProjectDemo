@@ -3,7 +3,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 variables:
-  imageName: dockeragent
+  imageName: 'dockeragent:$(Build.BuildId)'
 stages:
 #  - stage: DockerImage
 #    jobs:
@@ -32,12 +32,31 @@ stages:
       - job:
         displayName: Build and Run Tests
         steps:
-          - task: Docker@2
-            displayName: Build an image
+#          - task: Docker@2
+#            displayName: Build an image
+#            inputs:
+#              repository: dockeragent
+#              command: build
+#              Dockerfile: Dockerfile
+          - task: Docker@1
+            displayName: 'Build the Docker image'
             inputs:
-              repository: dockeragent
-              command: build
-              Dockerfile: Dockerfile
+              containerregistrytype: 'Container Registry'
+              dockerRegistryEndpoint: 'Docker Hub'
+              command: 'Build an image'
+              dockerFile: '**/Dockerfile'
+              imageName: '$(ImageName)'
+              includeLatestTag: true
+              useDefaultContext: false
+              buildContext: '.'
+          - task: Docker@1
+            displayName: 'Push the Docker image to Dockerhub'
+            inputs:
+              containerregistrytype: 'Container Registry'
+              dockerRegistryEndpoint: 'Docker Hub'
+              command: 'Push an image'
+              imageName: '$(imageName)'
+            condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
           - task: DockerCompose@0
             displayName: Run Docker Command
             inputs:
