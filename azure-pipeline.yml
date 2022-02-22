@@ -27,9 +27,8 @@ stages:
               dockerComposeCommand: '-f docker-compose-sonar.yml build'
           - task: SonarQubePrepare@5
             inputs:
-              SonarQube: 'Sonarqube-pipeline'
-              scannerMode: CLI
-              configFile: sonar-scanner.properties
+              SonarQube: 'sonarqube'
+              scannerMode: 'CLI'
           - task: DockerCompose@0
             displayName: Build SonarScanner
             inputs:
