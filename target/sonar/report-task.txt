@@ -1,6 +1,0 @@
-projectKey=groupId:JavaProjectDemo
-serverUrl=http://localhost:9000
-serverVersion=9.3.0.51899
-dashboardUrl=http://localhost:9000/dashboard?id=groupId%3AJavaProjectDemo
-ceTaskId=AX8gN38ad1K5ZeA5Kwq0
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AX8gN38ad1K5ZeA5Kwq0

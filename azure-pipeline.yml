@@ -8,18 +8,29 @@ stages:
       - job:
         displayName: Build and Run Tests
         steps:
-#          - task: Docker@2
-#            displayName: Build an image
-#            inputs:
-#              repository: $(imageName)
-#              command: build
-#              Dockerfile: Dockerfile
           - task: DockerCompose@0
-            displayName: Build SeleniumGrid & SonarQube
+            displayName: Build SeleniumGrid
             inputs:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
               dockerComposeCommand: 'up -d'
+          - task: Docker@2
+            displayName: Build an image
+            inputs:
+              command: build
+              Dockerfile: Dockerfile
+          - task: DockerCompose@0
+            displayName: Build SonarQube
+            inputs:
+              containerregistrytype: Container Registry
+              dockerComposeFile: docker-compose-sonar.yml
+              dockerComposeCommand: '-f docker-compose-sonar.yml build'
+          - task: DockerCompose@0
+            displayName: Build SonarScanner
+            inputs:
+              containerregistrytype: Container Registry
+              dockerComposeFile: docker-compose-sonar.yml
+              dockerComposeCommand: '-f docker-compose-sonar.yml up -d'
           - task: Maven@3
             displayName: Run Tests
             inputs:
@@ -36,7 +47,7 @@ stages:
               sqMavenPluginVersionChoice: 'latest'
           - task: SonarQubePrepare@5
             inputs:
-              SonarQube: 'sonarqube'
+              SonarQube: 'sonarqube-pipeline'
               scannerMode: CLI
               configFile: sonar-scanner.properties
           - task: SonarQubeAnalyze@4
