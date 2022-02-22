@@ -1,12 +1,12 @@
 version: "3"
 services:
-  docker-agent:
-    image: dockeragent:1
-    environment:
-      - AZP_TOKEN=uvli24joegprzsjpsf674dcmptb57jnfmvvoukgc532keat3zvha
-      - AZP_AGENT_NAME=mydockeragent
-      - AZP_POOL=SelfHosted
-      - AZP_URL=https://dev.azure.com/extHungSang/
+#  docker-agent:
+#    image: dockeragent:1
+#    environment:
+#      - AZP_TOKEN=uvli24joegprzsjpsf674dcmptb57jnfmvvoukgc532keat3zvha
+#      - AZP_AGENT_NAME=mydockeragent
+#      - AZP_POOL=SelfHosted
+#      - AZP_URL=https://dev.azure.com/extHungSang/
   selenium-hub:
     image: selenium/hub:3.141.59-20210929
     container_name: selenium-hub
