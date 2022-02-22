@@ -1,7 +1,7 @@
 version: "3"
 services:
   docker-agent:
-    image: dockeragent:latest
+    image: dockeragent
     environment:
       - AZP_TOKEN=uvli24joegprzsjpsf674dcmptb57jnfmvvoukgc532keat3zvha
       - AZP_AGENT_NAME=mydockeragent
