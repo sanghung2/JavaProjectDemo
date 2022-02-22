@@ -27,11 +27,6 @@ stages:
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
-  - stage: Sonarqube
-    jobs:
-      - job:
-        displayName: Run Sonaeqube Analysis
-        steps:
           - task: SonarQubePrepare@5
             inputs:
               SonarQube: 'Sonarqube'
