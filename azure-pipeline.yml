@@ -14,11 +14,7 @@ stages:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
               dockerComposeCommand: 'up -d'
-          - task: JavaToolInstaller@0
-            inputs:
-              versionSpec: '11.0'
-              jdkArchitectureOption: 'x64'
-              jdkSourceOption: 'PreInstalled'
+
           - task: Maven@3
             inputs:
               mavenPomFile: 'pom.xml'
