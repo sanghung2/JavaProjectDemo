@@ -24,7 +24,7 @@ stages:
             inputs:
               mavenPomFile: 'pom.xml'
               goals: 'test'
-              options: 'clean test -Dsurefire.suiteXmlFiles=regression.xml'
+              options: 'clean test -Dsurefire.suiteXmLFiles=regression.xml sonar:sonar -Dsonar.login=65da9114f5f17e274abe3a7a1af0b79dd81159ab'
               publishJUnitResults: true
               testResultsFiles: '**/surefire-reports/*.xml'
               javaHomeOption: 'JDKVersion'
@@ -33,12 +33,14 @@ stages:
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
-          - task: SonarQubePrepare@5
-            inputs:
-              SonarQube: 'sonarqube'
-              scannerMode: CLI
-              configFile: sonar-project.properties
-          - task: SonarQubeAnalyze@4
-          - task: SonarQubePublish@5
-            inputs:
-              pollingTimeoutSec: '300'
+#          - task: SonarQubePrepare@5
+#            inputs:
+#              SonarQube: 'sonarqube'
+#              scannerMode: CLI
+#              configFile: sonar-project.properties
+#          - task: SonarQubeAnalyze@4
+#          - task: SonarQubePublish@5
+#            inputs:
+#              pollingTimeoutSec: '300'
+
+#clean test -Dsurefire.suiteXmLFiles=regression.xml sonar:sonar -Dsonar.login=65da9114f5f17e274abe3a7a1af0b79dd81159ab
