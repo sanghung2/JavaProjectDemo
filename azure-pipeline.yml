@@ -18,7 +18,7 @@ stages:
               dockerRegistryEndpoint: 'Docker Hub'
               command: 'Build an image'
               dockerFile: 'Utilities/**/Dockerfile'
-              imageName: '$(ImageName)'
+              imageName: '$(imageName)'
               includeLatestTag: true
               useDefaultContext: false
               buildContext: '.'
