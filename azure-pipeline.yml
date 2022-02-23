@@ -38,7 +38,7 @@ stages:
               configMode: 'file'
               configFile: 'sonar-scanner.properties'
               extraProperties: 'sonar.projectKey=JavaProjectDemo'
-          - powershell: |
+          - script: |
               FILTERED_PARAMS=$(echo $SONARQUBE_SCANNER_PARAMS | sed 's/"sonar.branch.name":"[^"]*"\,//g')
               echo "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$FILTERED_PARAMS"
             displayName: Filter Non-CE Sonar Parameters
