@@ -14,27 +14,27 @@ stages:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
               dockerComposeCommand: 'up -d'
-          - task: Docker@2
-            displayName: Build an image
-            inputs:
-              command: build
-              Dockerfile: Dockerfile
-          - task: DockerCompose@0
-            displayName: Build SonarQube
-            inputs:
-              containerregistrytype: Container Registry
-              dockerComposeFile: docker-compose-sonar.yml
-              dockerComposeCommand: '-f docker-compose-sonar.yml build'
+#          - task: Docker@2
+#            displayName: Build an image
+#            inputs:
+#              command: build
+#              Dockerfile: Dockerfile
+#          - task: DockerCompose@0
+#            displayName: Build SonarQube
+#            inputs:
+#              containerregistrytype: Container Registry
+#              dockerComposeFile: docker-compose-sonar.yml
+#              dockerComposeCommand: '-f docker-compose-sonar.yml build'
+#          - task: DockerCompose@0
+#            displayName: Build SonarScanner
+#            inputs:
+#              containerregistrytype: Container Registry
+#              dockerComposeFile: docker-compose-sonar.yml
+#              dockerComposeCommand: '-f docker-compose-sonar.yml up -d'
           - task: SonarQubePrepare@5
             inputs:
               SonarQube: 'sonarqube'
               scannerMode: 'CLI'
-          - task: DockerCompose@0
-            displayName: Build SonarScanner
-            inputs:
-              containerregistrytype: Container Registry
-              dockerComposeFile: docker-compose-sonar.yml
-              dockerComposeCommand: '-f docker-compose-sonar.yml up -d'
           - task: Maven@3
             displayName: Run Tests
             inputs:
