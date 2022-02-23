@@ -9,7 +9,7 @@ stages:
         displayName: Build and Run Tests
         steps:
           - task: DockerCompose@0
-            displayName: Build SeleniumGrid
+            displayName: Build SeleniumGrid & Chrome
             inputs:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
@@ -24,10 +24,11 @@ stages:
 #          - script: |
 #              FILTERED_PARAMS=$(echo $SONARQUBE_SCANNER_PARAMS | sed 's/"sonar.branch.name":"[^"]*"\,//g')
 #              echo "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$FILTERED_PARAMS"
-#            displayName: Filter Non-CE Sonar Parameters
+#            displayName: Filter Parameters
           - powershell: |
               $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
               Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
+            displayName: Set SonarScanner Params
           - task: Maven@3
             displayName: Run Tests
             inputs:
