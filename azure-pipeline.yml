@@ -35,6 +35,7 @@ stages:
             inputs:
               SonarQube: 'sonarqube'
               scannerMode: 'CLI'
+              extraProperties: 'sonar.projectKey=JavaProjectDemo'
           - task: Maven@3
             displayName: Run Tests
             inputs:
