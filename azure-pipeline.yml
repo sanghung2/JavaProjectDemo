@@ -50,7 +50,7 @@ stages:
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
-#          - task: SonarQubeAnalyze@4
+          - task: SonarQubeAnalyze@4
           - task: SonarQubePublish@5
             inputs:
               pollingTimeoutSec: '300'
