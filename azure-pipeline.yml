@@ -14,23 +14,6 @@ stages:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
               dockerComposeCommand: 'up -d'
-#          - task: Docker@2
-#            displayName: Build an image
-#            inputs:
-#              command: build
-#              Dockerfile: Dockerfile
-#          - task: DockerCompose@0
-#            displayName: Build SonarQube
-#            inputs:
-#              containerregistrytype: Container Registry
-#              dockerComposeFile: docker-compose-sonar.yml
-#              dockerComposeCommand: '-f docker-compose-sonar.yml build'
-#          - task: DockerCompose@0
-#            displayName: Build SonarScanner
-#            inputs:
-#              containerregistrytype: Container Registry
-#              dockerComposeFile: docker-compose-sonar.yml
-#              dockerComposeCommand: '-f docker-compose-sonar.yml up -d'
           - task: SonarQubePrepare@5
             inputs:
               SonarQube: 'sonarqube'
@@ -38,10 +21,13 @@ stages:
               configMode: 'file'
               configFile: 'sonar-scanner.properties'
               extraProperties: 'sonar.projectKey=JavaProjectDemo'
-          - script: |
-              FILTERED_PARAMS=$(echo $SONARQUBE_SCANNER_PARAMS | sed 's/"sonar.branch.name":"[^"]*"\,//g')
-              echo "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$FILTERED_PARAMS"
-            displayName: Filter Non-CE Sonar Parameters
+#          - script: |
+#              FILTERED_PARAMS=$(echo $SONARQUBE_SCANNER_PARAMS | sed 's/"sonar.branch.name":"[^"]*"\,//g')
+#              echo "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$FILTERED_PARAMS"
+#            displayName: Filter Non-CE Sonar Parameters
+          - powershell: |
+              $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
+              Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
           - task: Maven@3
             displayName: Run Tests
             inputs:
