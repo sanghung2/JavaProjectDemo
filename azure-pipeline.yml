@@ -9,7 +9,7 @@ stages:
         displayName: Build and Run Tests
         steps:
           - task: DockerCompose@0
-            displayName: Build SeleniumGrid & Chrome
+            displayName: Build SeleniumGrid
             inputs:
               containerregistrytype: Container Registry
               dockerComposeFile: docker-compose.yml
