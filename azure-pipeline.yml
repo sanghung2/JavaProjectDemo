@@ -49,6 +49,6 @@ stages:
               to: 'exthung.sang@bcg.com'
               from: 'exthung.sang@bcg.com'
               subject: 'Test Result Report'
-              htmlbody: 
+              htmlbody: 'Build Completed'
               addattachment: true
               attachment: '**/surefire-reports/*.html'
