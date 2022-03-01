@@ -45,7 +45,7 @@ stages:
               pollingTimeoutSec: '300'
           - task: SendGrid@1
             inputs:
-              sendgridkey: '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'
+              sendgridkey: '$(SendKeyToken)'
               to: 'exthung.sang@bcg.com'
               from: 'exthung.sang@bcg.com'
               subject: 'Test Result Report'
