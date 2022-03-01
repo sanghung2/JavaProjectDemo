@@ -1,5 +1,3 @@
-trigger:
-  - azure-pipeline
 pool:
   vmImage: 'ubuntu-latest'
 parameters:
