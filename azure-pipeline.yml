@@ -43,14 +43,12 @@ stages:
           - task: SonarQubePublish@5
             inputs:
               pollingTimeoutSec: '300'
-          - task: SendEmail@1
+          - task: SendGrid@1
             inputs:
-              To: 'exthung.sang@bcg.com'
-              From: 'exthung.sang@bcg.com'
-              Subject: 'Test Result Report - Azure Pipeline'
-              BodyAsHtml: true
-              AddAttachment: true
-              Attachment: '**/surefire-reports/*.html'
-              SmtpServer: 'smtp-mail.outlook.com'
-              SmtpUsername: 'exthung.sang@bcg.com'
-              SmtpPassword: $(emailPass)
+              sendgridkey: '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'
+              to: 'exthung.sang@bcg.com'
+              from: 'exthung.sang@bcg.com'
+              subject: 'Test Result Report'
+              htmlbody: 
+              addattachment: true
+              attachment: '**/surefire-reports/*.html'
