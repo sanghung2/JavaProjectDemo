@@ -43,3 +43,14 @@ stages:
           - task: SonarQubePublish@5
             inputs:
               pollingTimeoutSec: '300'
+          - task: SendEmail@1
+            inputs:
+              To: 'exthung.sang@bcg.com'
+              From: 'exthung.sang@bcg.com'
+              Subject: 'Test Result Report - Azure Pipeline'
+              BodyAsHtml: true
+              AddAttachment: true
+              Attachment: '**/surefire-reports/*.html'
+              SmtpServer: 'smtp-mail.outlook.com'
+              SmtpUsername: 'exthung.sang@bcg.com'
+              SmtpPassword: $(emailPass)
