@@ -1,0 +1,29 @@
+version: 2.1
+
+orbs:
+  maven: circleci/maven@1.2.0
+  docker: circleci/docker@1.7.0
+
+workflows:
+  build-and-test:
+    jobs:
+      - build
+
+jobs:
+  build:
+    machine: true
+    working_directory: ~/project
+    steps:
+      - checkout
+      - run:
+          name: Build Selenium Hub
+          command: docker-compose up -d
+      - run:
+          image: cimg/openjdk:15.0
+          name: Run Tests
+          command: mvn clean test -Dsurefire.suiteXmlFiles=regression.xml
+      - run:
+          name: Tear Down Containers
+          command: docker-compose down
+      - store_test_results:
+          path: target/surefire-reports
