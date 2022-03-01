@@ -51,4 +51,4 @@ stages:
               subject: 'Test Result Report'
               htmlbody: 'Build Completed'
               addattachment: true
-              attachment: 'emailable-report.html'
+              attachment: 'target/surefure-reports/emailable-report.html'
