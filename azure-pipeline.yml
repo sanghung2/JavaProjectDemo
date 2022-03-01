@@ -43,6 +43,12 @@ stages:
           - task: SonarQubePublish@5
             inputs:
               pollingTimeoutSec: '300'
+          - task: CopyFiles@2
+            displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+            inputs:
+              Contents: |
+                *target/surefire-reports/*.html
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - task: SendGrid@1
             inputs:
               sendgridkey: '$(SendKeyToken)'
@@ -51,4 +57,4 @@ stages:
               subject: 'Test Result Report'
               htmlbody: 'Build Completed'
               addattachment: true
-              attachment: 'target/surefure-reports/emailable-report.html'
+              attachment: '$(Build.ArtifactStagingDirectory)/emailable-report.html'
