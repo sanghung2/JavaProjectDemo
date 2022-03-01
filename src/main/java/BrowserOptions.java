@@ -4,7 +4,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 public class BrowserOptions {
     public static ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
-//        options.addArguments("start-maximized");
+        options.addArguments("start-maximized");
         return options;
     }
 
