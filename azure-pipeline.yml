@@ -57,4 +57,4 @@ stages:
               subject: 'Test Result Report'
               htmlbody: 'Build Completed'
               addattachment: true
-              attachment: '$(Build.ArtifactStagingDirectory)/emailable-report.html'
+              attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
