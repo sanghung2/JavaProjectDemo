@@ -51,4 +51,4 @@ stages:
               subject: 'Test Result Report'
               htmlbody: 'Build Completed'
               addattachment: true
-              attachment: '**/surefire-reports/*.html'
+              attachment: '**/*.html'
