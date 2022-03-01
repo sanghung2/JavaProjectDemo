@@ -62,3 +62,15 @@ stages:
               htmlbody: 'Build Completed'
               addattachment: true
               attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+          - task: SendEmail@1
+            inputs:
+              To: 'exthung.sang@bcg.com'
+              From: 'exthung.sang@bcg.com'
+              Subject: 'Test Result Report'
+              Body: 'Build Completed'
+              BodyAsHtml: true
+              AddAttachment: true
+              Attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              SmtpServer: 'smtp.sendgrid.net'
+              SmtpUsername: 'exthung.sang@bcg.com'
+              SmtpPassword: '$(SendKeyToken)'
