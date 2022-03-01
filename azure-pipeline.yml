@@ -2,6 +2,9 @@ trigger:
   - azure-pipeline
 pool:
   vmImage: 'ubuntu-latest'
+parameters:
+  - name: pomFile
+    type: string
 stages:
   - stage: Build
     jobs:
@@ -28,7 +31,7 @@ stages:
           - task: Maven@3
             displayName: Run Tests
             inputs:
-              mavenPomFile: 'pom.xml'
+              mavenPomFile: ${{parameters.pomFile}}
               goals: 'test'
               options: 'clean test -Dsurefire.suiteXmLFiles=regression.xml'
               publishJUnitResults: true
