@@ -1,5 +1,26 @@
-version: "3"
+version: "3.1"
 services:
+#  selenoid:
+#    network_mode: bridge
+#    image: aerokube/selenoid
+#    volumes:
+#      - "/docker:/etc/selenoid"
+#      - "/var/run/docker.sock:/var/run/docker.sock"
+#      - "/docker/video:/opt/selenoid/video"
+#    environment:
+#      - OVERRIDE_VIDEO_OUTPUT_DIR=/docker/video
+#    command: ["-conf", "/etc/selenoid/browsers.json", "-video-output-dir", "/opt/selenoid/video"]
+#    ports:
+#      - "4444:4444"
+#  selenoid-ui:
+#    image: aerokube/selenoid-ui:latest
+#    network_mode: bridge
+#    links:
+#      - selenoid
+#    ports:
+#      - "8080:8080"
+#    command: [ "--selenoid-uri", "http://selenoid:4444" ]
+
   selenium-hub:
     image: selenium/hub:3.141.59-20210929
     container_name: selenium-hub
@@ -15,7 +36,7 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
-      - NODE_MAX_SESSION=15
+      - NODE_MAX_SESSION=10
       - NODE_MAX_INSTANCES=5
 
   chrome-node2:
@@ -27,5 +48,5 @@ services:
     environment:
       - HUB_HOST=selenium-hub
       - HUB_PORT=4444
-      - NODE_MAX_SESSION=15
+      - NODE_MAX_SESSION=10
       - NODE_MAX_INSTANCES=5
