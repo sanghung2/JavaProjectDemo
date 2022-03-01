@@ -50,5 +50,5 @@ stages:
               from: 'exthung.sang@bcg.com'
               subject: 'Test Result Report'
               htmlbody: 'Build Completed'
-              addattachment: true
+              addattachment: false
               attachment: 'emailable-report.html'
