@@ -51,4 +51,4 @@ stages:
               subject: 'Test Result Report'
               htmlbody: 'Build Completed'
               addattachment: true
-              attachment: '$(Build.SourcesDirectory)/JavaProjectDemo/target/surefire-reports/emailable-report.html'
+              attachment: '*target/surefire-reports/*.html'
