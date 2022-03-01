@@ -50,6 +50,7 @@ stages:
                 *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - task: SendGrid@1
+            displayName: Email Test Results
             inputs:
               sendgridkey: '$(SendKeyToken)'
               to: 'exthung.sang@bcg.com'
