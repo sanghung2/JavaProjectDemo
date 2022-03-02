@@ -62,7 +62,7 @@ stages:
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/*.html'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
               artifactName: Test Result
 #           - task: SendGrid@1
 #             displayName: Email Test Results
@@ -71,6 +71,6 @@ stages:
 #               to: 'sangvhung@gmail.com'
 #               from: 'exthung.sang@bcg.com'
 #               subject: 'Test Result Report'
-#               htmlbody: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+#               htmlbody: 'Build Complete'
 #               addattachment: true
 #               attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
