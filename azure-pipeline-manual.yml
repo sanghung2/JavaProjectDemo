@@ -1,0 +1,63 @@
+pool:
+  vmImage: 'ubuntu-latest'
+parameters:
+  - name: pomFile
+    type: string
+    default: 'pom.xml'
+stages:
+  - stage: Build
+    jobs:
+      - job:
+        displayName: Build and Run Tests
+        steps:
+          - task: DockerCompose@0
+            displayName: Build SeleniumGrid
+            inputs:
+              containerregistrytype: Container Registry
+              dockerComposeFile: docker-compose.yml
+              dockerComposeCommand: 'up -d'
+          - task: SonarQubePrepare@5
+            inputs:
+              SonarQube: 'sonarqube'
+              scannerMode: 'CLI'
+              configMode: 'file'
+              configFile: 'sonar-scanner.properties'
+              extraProperties: 'sonar.projectKey=JavaProjectDemo'
+          - powershell: |
+              $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
+              Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
+            displayName: Set SonarScanner Params
+          - task: Maven@3
+            displayName: Run Tests
+            inputs:
+              mavenPomFile: ${{parameters.pomFile}}
+              goals: 'test'
+              options: 'clean test -Dsurefire.suiteXmLFiles=regression.xml'
+              publishJUnitResults: true
+              testResultsFiles: '**/surefire-reports/*.xml'
+              javaHomeOption: 'JDKVersion'
+              mavenVersionOption: 'Default'
+              mavenAuthenticateFeed: false
+              effectivePomSkip: false
+              sonarQubeRunAnalysis: false
+              sqMavenPluginVersionChoice: 'latest'
+          - task: SonarQubeAnalyze@4
+          - task: SonarQubePublish@5
+            inputs:
+              pollingTimeoutSec: '300'
+          - task: CopyFiles@2
+            displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+            inputs:
+              Contents: |
+                *target/surefire-reports/*.html
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - task: SendGrid@1
+            displayName: Email Test Results
+            inputs:
+              sendgridkey: '$(SendKeyToken)'
+              to: 'sangvhung@gmail.com'
+              from: 'exthung.sang@bcg.com'
+              subject: 'Test Result Report'
+              htmlbody: 'Build Completed'
+              addattachment: true
+              attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
