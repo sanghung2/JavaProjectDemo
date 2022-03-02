@@ -1,8 +1,9 @@
 trigger:
   branches:
     include:
-      - azure-pipeline
+      - none
     exclude:
+      - azure-pipeline
       - QA
       - Development
       - feature/*
