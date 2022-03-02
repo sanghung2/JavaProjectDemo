@@ -7,6 +7,7 @@
             <class name="RandomTests">
 <!--                <methods>-->
 <!--                </methods>-->
+
             </class>
         </classes>
     </test>
