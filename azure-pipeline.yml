@@ -1,5 +1,11 @@
 trigger:
-  - azure-pipeline
+  branches:
+    include:
+      - azure-pipeline
+    exclude:
+      - QA
+      - Development
+      - feature/*
 pool:
   vmImage: 'ubuntu-latest'
 parameters:
