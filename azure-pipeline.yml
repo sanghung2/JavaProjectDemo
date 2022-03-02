@@ -59,13 +59,13 @@ stages:
               Contents: |
                 *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
-#          - task: SendGrid@1
-#            displayName: Email Test Results
-#            inputs:
-#              sendgridkey: '$(SendKeyToken)'
-#              to: 'sangvhung@gmail.com'
-#              from: 'exthung.sang@bcg.com'
-#              subject: 'Test Result Report'
-#              htmlbody: 'Build Completed'
-#              addattachment: true
-#              attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+          - task: SendGrid@1
+            displayName: Email Test Results
+            inputs:
+              sendgridkey: '$(SendKeyToken)'
+              to: 'sangvhung@gmail.com'
+              from: 'exthung.sang@bcg.com'
+              subject: 'Test Result Report'
+              htmlbody: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              addattachment: true
+              attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
