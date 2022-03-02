@@ -56,7 +56,7 @@ stages:
             displayName: Email Test Results
             inputs:
               sendgridkey: '$(SendKeyToken)'
-              to: 'exthung.sang@bcg.com'
+              to: 'sangvhung@gmail.com'
               from: 'exthung.sang@bcg.com'
               subject: 'Test Result Report'
               htmlbody: 'Build Completed'
