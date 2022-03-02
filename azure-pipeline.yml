@@ -5,6 +5,7 @@ pool:
 parameters:
   - name: pomFile
     type: string
+    default: 'pom.xml'
 stages:
   - stage: Build
     jobs:
