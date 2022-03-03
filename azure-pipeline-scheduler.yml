@@ -1,5 +1,5 @@
 schedules:
-- cron: "*/8 * * * *"
+- cron: "0 */12 * * *"
   displayName: Running Scheduled Tests
   branches:
     include:
