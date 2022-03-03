@@ -1,0 +1,65 @@
+schedules:
+- cron: "* /10 * * * *"
+  displayName: Running Scheduled Tests
+  branches:
+    include:
+      - azure-pipeline
+    exclude:
+      - QA
+      - Development
+      - feature/*
+  always: false
+pr: none 
+pool:
+  vmImage: 'ubuntu-latest'
+parameters:
+  - name: pomFile
+    type: string
+    default: 'pom.xml'
+stages:
+  - stage: Build
+    jobs:
+      - job:
+        displayName: Build and Run Tests
+        steps:
+          - task: DockerCompose@0
+            displayName: Build SeleniumGrid
+            inputs:
+              containerregistrytype: Container Registry
+              dockerComposeFile: docker-compose.yml
+              dockerComposeCommand: 'up -d'
+          - task: Maven@3
+            displayName: Run Tests
+            inputs:
+              mavenPomFile: ${{parameters.pomFile}}
+              goals: 'test'
+              options: 'clean test -Dsurefire.suiteXmLFiles=regression.xml'
+              publishJUnitResults: true
+              testResultsFiles: '**/surefire-reports/*.xml'
+              javaHomeOption: 'JDKVersion'
+              mavenVersionOption: 'Default'
+              mavenAuthenticateFeed: false
+              effectivePomSkip: false
+              sonarQubeRunAnalysis: false
+              sqMavenPluginVersionChoice: 'latest'
+            continueOnError: true
+          - task: CopyFiles@2
+            displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+            inputs:
+              Contents: |
+                *target/surefire-reports/*.html
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              artifactName: Test Result
+#           - task: SendGrid@1
+#             displayName: Email Test Results
+#             inputs:
+#               sendgridkey: '$(SendKeyToken)'
+#               to: 'sangvhung@gmail.com'
+#               from: 'exthung.sang@bcg.com'
+#               subject: 'Test Result Report'
+#               htmlbody: 'Build Complete'
+#               addattachment: true
+#               attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
