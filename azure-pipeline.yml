@@ -32,6 +32,8 @@ stages:
               $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
               Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
             displayName: Set SonarScanner Params
+          - script: |
+            npx browserslist@latest --update-db
           - task: SonarQubeAnalyze@4
           - task: SonarQubePublish@5
             inputs:
