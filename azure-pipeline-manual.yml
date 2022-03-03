@@ -12,8 +12,7 @@ parameters:
     type: string
     default: 'pom.xml'
 variables:
-  - name: 'BROWSERLIST_IGNORE_OLD_DATA'
-    value: true
+  BROWSERLIST_IGNORE_OLD_DATA=1
 stages:
   - stage: Build
     jobs:
@@ -46,6 +45,10 @@ stages:
               Contents: |
                 *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              artifactName: Test Result
 #          - task: SendGrid@1
 #            displayName: Email Test Results
 #            inputs:

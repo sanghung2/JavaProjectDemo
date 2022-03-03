@@ -14,7 +14,7 @@ parameters:
     type: string
     default: 'pom.xml'
 variables:
-  BROWSERLIST_IGNORE_OLD_DATA: true
+  BROWSERLIST_IGNORE_OLD_DATA=1
 stages:
   - stage: Build
     jobs:
