@@ -16,23 +16,23 @@ public class RandomTests extends BaseTest {
         System.out.println("Navigated to page");
     }
 
-//    @Test
-//    public void RandomTest3() {
-//        utilities.NavigateToURL("www.google.com");
-//        System.out.println("Navigated to page");
-//    }
-//
-//    @Test
-//    public void RandomTest4() {
-//        utilities.NavigateToURL("www.google.com");
-//        System.out.println("Navigated to page");
-//    }
-//
-//    @Test
-//    public void RandomTest5() {
-//        utilities.NavigateToURL("www.google.com");
-//        System.out.println("Navigated to page");
-//    }
+   @Test
+   public void RandomTest3() {
+       utilities.NavigateToURL("www.google.com");
+       System.out.println("Navigated to page");
+   }
+
+   @Test
+   public void RandomTest4() {
+       utilities.NavigateToURL("www.google.com");
+       System.out.println("Navigated to page");
+   }
+
+   @Test
+   public void RandomTest5() {
+       utilities.NavigateToURL("www.google.com");
+       System.out.println("Navigated to page");
+   }
 //
 //    @Test
 //    public void RandomTest6() {
@@ -154,10 +154,10 @@ public class RandomTests extends BaseTest {
 //        System.out.println("Navigated to page");
 //    }
 
-   @Test
-   //This test will fail
-   public void RandomTest50() {
-       utilities.NavigateToURL("www.google.com");
-       utilities.ClickElementByID("hello fail");
-   }
+//    @Test
+//    //This test will fail
+//    public void RandomTest50() {
+//        utilities.NavigateToURL("www.google.com");
+//        utilities.ClickElementByID("hello fail");
+//    }
 }
