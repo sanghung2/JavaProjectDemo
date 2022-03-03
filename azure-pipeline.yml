@@ -54,6 +54,7 @@ stages:
               effectivePomSkip: false
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
+              continueOnError: true
           - task: CopyFiles@2
             displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
             inputs:
