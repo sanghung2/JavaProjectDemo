@@ -30,7 +30,7 @@
                 <version>2.19.1</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>pomRegression.xml</suiteXmlFile>
+                        <suiteXmlFile>regressionFail.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
