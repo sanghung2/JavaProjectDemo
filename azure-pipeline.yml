@@ -15,8 +15,6 @@ parameters:
     default: 'pom.xml'
 variables:
   BROWSERLIST_IGNORE_OLD_DATA: true
-commmand: | 
-  npx browserslist@latest --update-db
 stages:
   - stage: Build
     jobs:
