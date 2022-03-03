@@ -13,6 +13,9 @@ parameters:
   - name: pomFile
     type: string
     default: 'pom.xml'
+variables:
+  - name: 'BROWSERLIST_IGNORE_OLD_DATA'
+    value: true
 stages:
   - stage: Build
     jobs:
