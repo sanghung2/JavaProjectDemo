@@ -55,9 +55,13 @@ stages:
 #          - task: SonarQubePublish@5
 #            inputs:
 #              pollingTimeoutSec: '300'
+#          - powershell: |
+#              Write-Host "Setting up the date time for build variable"
+#              $date=$(Get-Date -format mmddyyyy-hhMMss)
+#              Write-Host "##vso[task.setvariable variable=foo]$date"
           - powershell: |
               Write-Host "Setting up the date time for build variable"
-              $date=$(Get-Date -format mmddyyyy-hhMMss)
+              $date=$(Get-Date -format mm-dd-yyyy-hh-MM-ss)
               Write-Host "##vso[task.setvariable variable=foo]$date"
             displayName: Set TimeStamp
           - task: CopyFiles@2
