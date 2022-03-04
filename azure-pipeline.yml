@@ -61,7 +61,7 @@ stages:
 #              Write-Host "##vso[task.setvariable variable=foo]$date"
           - powershell: |
               Write-Host "Setting up the date time for build variable"
-              $date=$(Get-Date -Format MM-dd-yyyy-HH-mm-ss)
+              $date=$(Get-Date -Format MM-dd-yyyy-HH:mm)
               Write-Host "##vso[task.setvariable variable=foo]$date"
             displayName: Set TimeStamp
           - task: CopyFiles@2
