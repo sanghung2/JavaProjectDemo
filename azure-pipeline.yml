@@ -55,20 +55,20 @@ stages:
 #          - task: SonarQubePublish@5
 #            inputs:
 #              pollingTimeoutSec: '300'
-          - task: CopyFiles@2
-            displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
-            inputs:
-              Contents: |
-                *target/surefire-reports/*.html
-              TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - powershell: |
               Write-Host "Setting up the date time for build variable"
               $date=$(Get-Date -format mmddyyyy-hhMMss)
               Write-Host "##vso[task.setvariable variable=foo]$date"
             displayName: Set TimeStamp
+          - task: CopyFiles@2
+            displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+            inputs:
+              Contents: |
+                *target/surefire-reports/emailable-report-$(foo).html
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report-$date$foo.html'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
               artifactName: Test Result 'foo' '$date'
 #           - task: SendGrid@1
 #             displayName: Email Test Results
