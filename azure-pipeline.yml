@@ -59,18 +59,18 @@ stages:
 #              Write-Host "Setting up the date time for build variable"
 #              $date=$(Get-Date -format mmddyyyy-hhMMss)
 #              Write-Host "##vso[task.setvariable variable=foo]$date"
-          - powershell: |
-              Write-Host "Setting up the date time for build variable"
-              $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
-              Write-Host "##vso[task.setvariable variable=foo]$date"
-              Rename-Item -Path "$(System.DefaultWorkingDirectory)*target/surefire-reports/emailable-report.html" -NewName "NewName.html"
-            displayName: Set TimeStamp
           - task: CopyFiles@2
             displayName: Copy TestResult Files
             inputs:
               Contents: |
                 *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - powershell: |
+              Write-Host "Setting up the date time for build variable"
+              $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
+              Write-Host "##vso[task.setvariable variable=foo]$date"
+              Rename-Item -Path "$(System.DefaultWorkingDirectory)*target/surefire-reports/emailable-report.html" -NewName "NewName.html"
+            displayName: Set TimeStamp
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/*.html'
