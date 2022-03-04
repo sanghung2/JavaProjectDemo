@@ -65,11 +65,12 @@ stages:
               Write-Host "Setting up the date time for build variable"
 #              $date=$(Get-Date -format yyyyMMdd-Hmmss)
               $date=$(Get-Date -format mmddyyyy-hhMMss)
+              Write-Host "##vso[task.setvariable variable=foo]$date"
             displayName: Set TimeStamp
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
-              artifactName: Test Result
+              artifactName: Test Result 'foo' '$date'
 #           - task: SendGrid@1
 #             displayName: Email Test Results
 #             inputs:
