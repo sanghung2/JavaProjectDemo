@@ -64,12 +64,12 @@ stages:
             displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
             inputs:
               Contents: |
-                *target/surefire-reports/emailable-report-$(foo).html
+                *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
-              artifactName: Test Result 'foo' '$date'
+              artifactName: Test Result $(foo)
 #           - task: SendGrid@1
 #             displayName: Email Test Results
 #             inputs:
