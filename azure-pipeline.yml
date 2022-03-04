@@ -59,7 +59,7 @@ stages:
             displayName: Copy TestResult Files
             inputs:
               Contents: |
-                *target/surefire-reports/*.html
+                *target/surefire-reports/emailable-report.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - powershell: |
               Write-Host "Setting up the date time for build variable"
