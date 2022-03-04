@@ -73,7 +73,7 @@ stages:
             displayName: Set TimeStamp
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/NewName.html'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report-$date.html'
               artifactName: Test Result $(foo)
 #           - task: SendGrid@1
 #             displayName: Email Test Results
