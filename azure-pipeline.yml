@@ -63,7 +63,7 @@ stages:
               Write-Host "Setting up the date time for build variable"
               $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
               Write-Host "##vso[task.setvariable variable=foo]$date"
-              Set-Location *target/surefire-reports/
+              Set-Location /target/surefire-reports/
               Get-ChildItem *emailable-report.html  |Rename-Item -NewName {$_.name -replace '^report','report-$(foo)'}
             displayName: Set TimeStamp
           - task: CopyFiles@2
