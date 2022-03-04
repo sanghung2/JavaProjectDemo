@@ -73,7 +73,7 @@ stages:
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/*.html'
               artifactName: Test Result $(foo)
 #           - task: SendGrid@1
 #             displayName: Email Test Results
