@@ -63,11 +63,10 @@ stages:
               Write-Host "Setting up the date time for build variable"
               $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
               Write-Host "##vso[task.setvariable variable=foo]$date"
-              Set-Location *target/surefire-reports/
-              Get-ChildItem emailable_*.html  |Rename-Item -NewName {$_.name -replace '^emailable','report-$(foo)'}
+              Rename-Item -Path "$(System.DefaultWorkingDirectory)*target/surefire-reports/emailable-report.html" -emailable-report-$(foo).html "emailable-report-$(foo).html"
             displayName: Set TimeStamp
           - task: CopyFiles@2
-            displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+            displayName: Copy TestResult Files
             inputs:
               Contents: |
                 *target/surefire-reports/*.html
