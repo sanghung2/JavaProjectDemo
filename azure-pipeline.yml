@@ -30,10 +30,6 @@ stages:
               $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
               Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
             displayName: Set SonarScanner Params
-          - task: SonarQubeAnalyze@4
-          - task: SonarQubePublish@5
-            inputs:
-              pollingTimeoutSec: '300'
           - task: DockerCompose@0
             displayName: Build SeleniumGrid
             inputs:
@@ -55,6 +51,10 @@ stages:
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
             continueOnError: true
+          - task: SonarQubeAnalyze@4
+          - task: SonarQubePublish@5
+            inputs:
+              pollingTimeoutSec: '300'
           - task: CopyFiles@2
             displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
             inputs:
