@@ -49,7 +49,7 @@ stages:
               awsCredentials: 'AWS_S3'
               regionName: 'us-east-2'
               bucketName: 'pipeline-reports-poc'
-              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
               globExpressions: '**'
               filesAcl: 'public-read-write'
           - task: PublishBuildArtifacts@1
