@@ -19,42 +19,42 @@ stages:
       - job:
         displayName: Build and Run Tests
         steps:
-          - task: SonarQubePrepare@5
-            inputs:
-              SonarQube: 'sonarqube'
-              scannerMode: 'CLI'
-              configMode: 'file'
-              configFile: 'sonar-scanner.properties'
-              extraProperties: 'sonar.projectKey=JavaProjectDemo'
-          - powershell: |
-              $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
-              Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
-            displayName: Set SonarScanner Params
-          - task: DockerCompose@0
-            displayName: Build SeleniumGrid
-            inputs:
-              containerregistrytype: Container Registry
-              dockerComposeFile: docker-compose.yml
-              dockerComposeCommand: 'up -d'
-          - task: Maven@3
-            displayName: Run Tests
-            inputs:
-              mavenPomFile: ${{parameters.pomFile}}
-              goals: 'test'
-              options: 'clean test -Dsurefire.suiteXmLFiles=regression.xml'
-              publishJUnitResults: true
-              testResultsFiles: '**/surefire-reports/*.xml'
-              javaHomeOption: 'JDKVersion'
-              mavenVersionOption: 'Default'
-              mavenAuthenticateFeed: false
-              effectivePomSkip: false
-              sonarQubeRunAnalysis: false
-              sqMavenPluginVersionChoice: 'latest'
-            continueOnError: true
-          - task: SonarQubeAnalyze@4
-          - task: SonarQubePublish@5
-            inputs:
-              pollingTimeoutSec: '300'
+#          - task: SonarQubePrepare@5
+#            inputs:
+#              SonarQube: 'sonarqube'
+#              scannerMode: 'CLI'
+#              configMode: 'file'
+#              configFile: 'sonar-scanner.properties'
+#              extraProperties: 'sonar.projectKey=JavaProjectDemo'
+#          - powershell: |
+#              $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
+#              Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
+#            displayName: Set SonarScanner Params
+#          - task: DockerCompose@0
+#            displayName: Build SeleniumGrid
+#            inputs:
+#              containerregistrytype: Container Registry
+#              dockerComposeFile: docker-compose.yml
+#              dockerComposeCommand: 'up -d'
+#          - task: Maven@3
+#            displayName: Run Tests
+#            inputs:
+#              mavenPomFile: ${{parameters.pomFile}}
+#              goals: 'test'
+#              options: 'clean test -Dsurefire.suiteXmLFiles=regression.xml'
+#              publishJUnitResults: true
+#              testResultsFiles: '**/surefire-reports/*.xml'
+#              javaHomeOption: 'JDKVersion'
+#              mavenVersionOption: 'Default'
+#              mavenAuthenticateFeed: false
+#              effectivePomSkip: false
+#              sonarQubeRunAnalysis: false
+#              sqMavenPluginVersionChoice: 'latest'
+#            continueOnError: true
+#          - task: SonarQubeAnalyze@4
+#          - task: SonarQubePublish@5
+#            inputs:
+#              pollingTimeoutSec: '300'
           - task: CopyFiles@2
             displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
             inputs:
@@ -68,7 +68,7 @@ stages:
             displayName: Set TimeStamp
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report-$date$foo.html'
               artifactName: Test Result 'foo' '$date'
 #           - task: SendGrid@1
 #             displayName: Email Test Results
