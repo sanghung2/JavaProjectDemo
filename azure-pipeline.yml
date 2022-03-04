@@ -61,15 +61,15 @@ stages:
               Contents: |
                 *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
-#          - powershell: |
-#              Write-Host "Setting up the date time for build variable"
-#              $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
-#              Write-Host "##vso[task.setvariable variable=foo]$date"
-#              Rename-Item -Path "$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html" -NewName "emailable-report-$date.html"
-#            displayName: Set TimeStamp
+          - powershell: |
+              Write-Host "Setting up the date time for build variable"
+              $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
+              Write-Host "##vso[task.setvariable variable=foo]$date"
+              Rename-Item -Path "$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html" -NewName "emailable-report-$date.html"
+            displayName: Set TimeStamp
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
               artifactName: Test Result
 #           - task: SendGrid@1
 #             displayName: Email Test Results
