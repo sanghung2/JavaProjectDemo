@@ -63,7 +63,6 @@ stages:
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - powershell: |
               Write-Host "Setting up the date time for build variable"
-#              $date=$(Get-Date -format yyyyMMdd-Hmmss)
               $date=$(Get-Date -format mmddyyyy-hhMMss)
               Write-Host "##vso[task.setvariable variable=foo]$date"
             displayName: Set TimeStamp
