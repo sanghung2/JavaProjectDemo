@@ -61,6 +61,11 @@ stages:
               Contents: |
                 *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - powershell: |
+              Write-Host "Setting up the date time for build variable"
+#              $date=$(Get-Date -format yyyyMMdd-Hmmss)
+              $date=$(Get-Date -format mmddyyyy-hhMMss)
+            displayName: Set TimeStamp
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
