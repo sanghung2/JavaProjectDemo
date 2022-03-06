@@ -30,10 +30,6 @@ stages:
               $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
               Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
             displayName: Set SonarScanner Params
-          - task: SonarQubeAnalyze@4
-          - task: SonarQubePublish@5
-            inputs:
-              pollingTimeoutSec: '300'
           - task: DockerCompose@0
             displayName: Build SeleniumGrid
             inputs:
@@ -55,12 +51,22 @@ stages:
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
             continueOnError: true
+          - task: SonarQubeAnalyze@4
+          - task: SonarQubePublish@5
+            inputs:
+              pollingTimeoutSec: '300'
           - task: CopyFiles@2
-            displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+            displayName: Copy TestResult Files
             inputs:
               Contents: |
-                *target/surefire-reports/*.html
+                *target/surefire-reports/emailable-report.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - powershell: |
+              Write-Host "Setting up the date time for build variable"
+              $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
+              Write-Host "##vso[task.setvariable variable=date]$date"
+              Rename-Item -Path "$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html" -NewName "emailable-report-$date.html"
+              displayName: Set TimeStamp
           - task: S3Upload@1
             inputs:
               awsCredentials: 'AWS_S3'
@@ -71,7 +77,7 @@ stages:
               filesAcl: 'public-read-write'
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
               artifactName: Test Result
 #           - task: SendGrid@1
 #             displayName: Email Test Results

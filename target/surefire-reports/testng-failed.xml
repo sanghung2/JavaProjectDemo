@@ -7,9 +7,12 @@
       <class name="RandomTests">
         <methods>
           <include name="SetUp"/>
+          <include name="RandomTest3"/>
+          <include name="RandomTest4"/>
           <include name="TearDown"/>
           <include name="RandomTest2"/>
           <include name="RandomTest"/>
+          <include name="RandomTest5"/>
         </methods>
       </class> <!-- RandomTests -->
     </classes>

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-03-02T10:48:34 CST" name="Suite" finished-at="2022-03-02T10:48:38 CST" duration-ms="3259">
+  <suite started-at="2022-03-04T15:13:47 CST" name="Suite" finished-at="2022-03-04T15:13:50 CST" duration-ms="3280">
     <groups>
     </groups>
-    <test started-at="2022-03-02T10:48:34 CST" name="com.regression" finished-at="2022-03-02T10:48:38 CST" duration-ms="3259">
+    <test started-at="2022-03-04T15:13:47 CST" name="com.regression" finished-at="2022-03-04T15:13:50 CST" duration-ms="3280">
       <class name="RandomTests">
-        <test-method is-config="true" signature="SetUp(java.lang.String)[pri:0, instance:RandomTests@518caac3]" started-at="2022-03-02T10:48:34 CST" name="SetUp" finished-at="2022-03-02T10:48:37 CST" duration-ms="2225" status="PASS">
+        <test-method is-config="true" signature="SetUp(java.lang.String)[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:47 CST" name="SetUp" finished-at="2022-03-04T15:13:49 CST" duration-ms="1807" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,7 +18,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method is-config="true" signature="SetUp(java.lang.String)[pri:0, instance:RandomTests@518caac3]" started-at="2022-03-02T10:48:34 CST" name="SetUp" finished-at="2022-03-02T10:48:37 CST" duration-ms="2225" status="PASS">
+        <test-method is-config="true" signature="SetUp(java.lang.String)[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:47 CST" name="SetUp" finished-at="2022-03-04T15:13:49 CST" duration-ms="1807" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -29,19 +29,76 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SetUp -->
-        <test-method signature="RandomTest()[pri:0, instance:RandomTests@518caac3]" started-at="2022-03-02T10:48:37 CST" name="RandomTest" finished-at="2022-03-02T10:48:38 CST" duration-ms="929" status="PASS">
+        <test-method is-config="true" signature="SetUp(java.lang.String)[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:47 CST" name="SetUp" finished-at="2022-03-04T15:13:49 CST" duration-ms="1807" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method is-config="true" signature="SetUp(java.lang.String)[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:47 CST" name="SetUp" finished-at="2022-03-04T15:13:49 CST" duration-ms="1807" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method is-config="true" signature="SetUp(java.lang.String)[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:47 CST" name="SetUp" finished-at="2022-03-04T15:13:49 CST" duration-ms="1807" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method signature="RandomTest()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:49 CST" name="RandomTest" finished-at="2022-03-04T15:13:50 CST" duration-ms="1240" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RandomTest -->
-        <test-method signature="RandomTest2()[pri:0, instance:RandomTests@518caac3]" started-at="2022-03-02T10:48:37 CST" name="RandomTest2" finished-at="2022-03-02T10:48:38 CST" duration-ms="924" status="PASS">
+        <test-method signature="RandomTest5()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:49 CST" name="RandomTest5" finished-at="2022-03-04T15:13:50 CST" duration-ms="1133" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RandomTest5 -->
+        <test-method signature="RandomTest2()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:49 CST" name="RandomTest2" finished-at="2022-03-04T15:13:50 CST" duration-ms="1347" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- RandomTest2 -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:RandomTests@518caac3]" started-at="2022-03-02T10:48:38 CST" name="TearDown" finished-at="2022-03-02T10:48:38 CST" duration-ms="69" status="PASS">
+        <test-method signature="RandomTest4()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:49 CST" name="RandomTest4" finished-at="2022-03-04T15:13:50 CST" duration-ms="974" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RandomTest4 -->
+        <test-method signature="RandomTest3()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:49 CST" name="RandomTest3" finished-at="2022-03-04T15:13:50 CST" duration-ms="1163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RandomTest3 -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:50 CST" name="TearDown" finished-at="2022-03-04T15:13:50 CST" duration-ms="67" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:RandomTests@518caac3]" started-at="2022-03-02T10:48:38 CST" name="TearDown" finished-at="2022-03-02T10:48:38 CST" duration-ms="73" status="PASS">
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:50 CST" name="TearDown" finished-at="2022-03-04T15:13:50 CST" duration-ms="70" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:50 CST" name="TearDown" finished-at="2022-03-04T15:13:50 CST" duration-ms="69" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:50 CST" name="TearDown" finished-at="2022-03-04T15:13:50 CST" duration-ms="62" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:RandomTests@6c372fe6]" started-at="2022-03-04T15:13:50 CST" name="TearDown" finished-at="2022-03-04T15:13:50 CST" duration-ms="89" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->
