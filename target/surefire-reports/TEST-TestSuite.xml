@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="3.62" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="3.662" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="15.0.2+7-27"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-15.0.2.jdk/Contents/Home/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/hungsang/Documents/JavaProjectDemo"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/hungsang/Documents/TestingPOC/JavaProjectDemo"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/hungsang/Documents/JavaProjectDemo"/>
+    <property name="user.dir" value="/Users/hungsang/Documents/TestingPOC/JavaProjectDemo"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="java.runtime.version" value="15.0.2+7-27"/>
     <property name="os.arch" value="x86_64"/>
@@ -56,6 +56,9 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
   </properties>
-  <testcase name="RandomTest2" classname="RandomTests" time="0.927"/>
-  <testcase name="RandomTest" classname="RandomTests" time="0.929"/>
+  <testcase name="RandomTest4" classname="RandomTests" time="0.975"/>
+  <testcase name="RandomTest5" classname="RandomTests" time="1.132"/>
+  <testcase name="RandomTest3" classname="RandomTests" time="1.161"/>
+  <testcase name="RandomTest" classname="RandomTests" time="1.239"/>
+  <testcase name="RandomTest2" classname="RandomTests" time="1.345"/>
 </testsuite>

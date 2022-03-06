@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -108,6 +108,21 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Suite" title="RandomTests" class="method navigator-link" hash-for-method="RandomTest2">RandomTest2</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="RandomTests" class="method navigator-link" hash-for-method="RandomTest3">RandomTest3</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="RandomTests" class="method navigator-link" hash-for-method="RandomTest4">RandomTest4</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="RandomTests" class="method navigator-link" hash-for-method="RandomTest5">RandomTest5</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
@@ -142,12 +157,33 @@
                   <span class="method-name">RandomTest2</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="RandomTest3">
+                  </a> <!-- RandomTest3 -->
+                  <span class="method-name">RandomTest3</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="RandomTest4">
+                  </a> <!-- RandomTest4 -->
+                  <span class="method-name">RandomTest4</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="RandomTest5">
+                  </a> <!-- RandomTest5 -->
+                  <span class="method-name">RandomTest5</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">/Users/hungsang/Documents/JavaProjectDemo/regression.xml</span>
+            <span class="header-content">/Users/hungsang/Documents/TestingPOC/JavaProjectDemo/regression.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -197,15 +233,27 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(2);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'RandomTest')
+data.setCell(0, 1, 'RandomTest2')
 data.setCell(0, 2, 'RandomTests')
-data.setCell(0, 3, 929);
+data.setCell(0, 3, 1347);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'RandomTest2')
+data.setCell(1, 1, 'RandomTest')
 data.setCell(1, 2, 'RandomTests')
-data.setCell(1, 3, 924);
+data.setCell(1, 3, 1240);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'RandomTest3')
+data.setCell(2, 2, 'RandomTests')
+data.setCell(2, 3, 1163);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'RandomTest5')
+data.setCell(3, 2, 'RandomTests')
+data.setCell(3, 3, 1133);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'RandomTest4')
+data.setCell(4, 2, 'RandomTests')
+data.setCell(4, 3, 974);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -245,21 +293,57 @@ return data;
                 <span class="method-name">SetUp(chrome)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">SetUp(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">SetUp(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">SetUp(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">RandomTest</span>
-                <span class="method-start">2226 ms</span>
+                <span class="method-name">RandomTest3</span>
+                <span class="method-start">1808 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">RandomTest5</span>
+                <span class="method-start">1808 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">RandomTest2</span>
-                <span class="method-start">2226 ms</span>
+                <span class="method-start">1808 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">RandomTest</span>
+                <span class="method-start">1808 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">RandomTest4</span>
+                <span class="method-start">1808 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">TearDown</span>
-                <span class="method-start">3153 ms</span>
+                <span class="method-start">2784 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method after">
                 <span class="method-name">TearDown</span>
-                <span class="method-start">3156 ms</span>
+                <span class="method-start">2942 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">2971 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">3049 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">TearDown</span>
+                <span class="method-start">3155 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
