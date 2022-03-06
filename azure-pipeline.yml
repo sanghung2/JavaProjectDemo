@@ -66,7 +66,7 @@ stages:
               $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
               Write-Host "##vso[task.setvariable variable=date]$date"
               Rename-Item -Path "$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html" -NewName "emailable-report-$date.html"
-              displayName: Set TimeStamp
+            displayName: Set TimeStamp
           - task: S3Upload@1
             inputs:
               awsCredentials: 'AWS_S3'
