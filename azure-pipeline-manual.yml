@@ -42,6 +42,14 @@ stages:
               Contents: |
                 *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - task: S3Upload@1
+            inputs:
+              awsCredentials: 'AWS_S3'
+              regionName: 'us-east-2'
+              bucketName: 'pipeline-reports-poc'
+              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
+              globExpressions: 'emailable-report*.html'
+              filesAcl: 'public-read-write'
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
