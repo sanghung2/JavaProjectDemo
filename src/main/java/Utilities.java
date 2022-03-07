@@ -17,9 +17,7 @@ public class Utilities extends BaseTest {
         } catch (WebDriverException e) {
             try {
                 String dir = System.getProperty("user.dir");
-                String home = System.getProperty("user.home");
-                String pathDir = home + "\\temp\\";
-                String path = pathDir + "screenshot.jpg";
+                String pathDir = dir + "/target/screenshots/screenshot.jpg";
                 System.out.println(dir);
                 System.out.println(home);
                 System.out.println(path);
