@@ -56,6 +56,13 @@ stages:
               sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
               globExpressions: 'emailable-report*.html'
               filesAcl: 'public-read-write'
+          - task: CopyFilesOverSSH@0
+            inputs:
+              sshEndpoint: 'AWS_EC2'
+              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
+              contents: 'emailable-report*.html'
+              targetFolder: '~/Documents/AutomatedTestingPOC'
+              readyTimeout: '20000'
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
