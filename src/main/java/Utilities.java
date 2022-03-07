@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 
 public class Utilities extends BaseTest {
 
-    public void ClickElementByID(String id) {
+    public void ClickElementByID(String id) throws IOException {
         try {
             getDriver().findElement(By.id(id)).click();
         } catch (IOException e){
