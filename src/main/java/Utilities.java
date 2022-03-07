@@ -18,8 +18,8 @@ public class Utilities extends BaseTest {
             try {
                 String dir = System.getProperty("user.dir");
                 String home = System.getProperty("user.home");
-                Path pathDir = Paths.get(home + "\\temp\\");
-                Path path = Paths.get(pathDir.toString() + "screenshot.jpg");
+                String pathDir = home + "\\temp\\";
+                String path = pathDir + "screenshot.jpg";
                 System.out.println(dir);
                 System.out.println(home);
                 System.out.println(path);
