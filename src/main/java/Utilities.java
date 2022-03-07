@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import java.io.File;
+import java.io.IOException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -8,12 +9,15 @@ import org.testng.annotations.Test;
 
 public class Utilities extends BaseTest {
 
-    public void ClickElementByID(String id) {
+    public void ClickElementByID(String id) throws IOException{
         try {
             getDriver().findElement(By.id(id)).click();
         } catch (Exception e){
             File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             FileHandler.copy(screenshotFile, new File("*/target/screenshots/screenshot.png"));
+
+        } catch (IOException ioe) {
+            System.out.println("IOException");
         }
     }
 
