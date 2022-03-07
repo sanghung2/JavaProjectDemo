@@ -17,11 +17,10 @@ public class Utilities extends BaseTest {
         } catch (WebDriverException e) {
             try {
                 File screenshotFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
-                FileHandler.copy(screenshotFile, new File("*/target/screenshots/screenshot.png"));
+                FileHandler.copy(screenshotFile, new File("~/target/screenshots/screenshot.png"));
             } catch (IOException ioe) {
                 System.out.println(ioe);
             }
-
         }
     }
 
