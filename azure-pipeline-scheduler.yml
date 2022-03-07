@@ -69,7 +69,7 @@ stages:
               filesAcl: 'public-read-write'
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report*.html'
               artifactName: Test Result
 #           - task: SendGrid@1
 #             displayName: Email Test Results
