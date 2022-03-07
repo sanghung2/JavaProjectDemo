@@ -1,7 +1,7 @@
 import org.openqa.selenium.By;
 import java.io.File;
 import java.io.IOException;
-import org.openqa.seleium.ITakesScreenshot;
+import org.openqa.selenium.ITakesScreenshot;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
