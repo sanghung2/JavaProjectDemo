@@ -9,10 +9,10 @@ import org.testng.annotations.Test;
 
 public class Utilities extends BaseTest {
 
-    public void ClickElementByID(String id) throws IOException{
+    public void ClickElementByID(String id) {
         try {
             getDriver().findElement(By.id(id)).click();
-        } catch (Exception e){
+        } catch (IOException e){
             File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             FileHandler.copy(screenshotFile, new File("*/target/screenshots/screenshot.png"));
         }
