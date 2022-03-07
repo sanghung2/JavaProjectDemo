@@ -16,8 +16,15 @@ public class Utilities extends BaseTest {
             getDriver().findElement(By.id(id)).click();
         } catch (WebDriverException e) {
             try {
+                String dir = System.getProperty("user.dir");
+                String home = System.getProperty("user.home");
+                Path pathDir = Paths.get(home + "\\temp\\");
+                Path path = Paths.get(pathDir.toString() + "screenshot.jpg")
+                System.out.println(dir);
+                System.out.println(home);
+                System.out.println(path);
                 File screenshotFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
-                FileHandler.copy(screenshotFile, new File("~/target/screenshots/screenshot.png"));
+                FileHandler.copy(screenshotFile, new File(path));
             } catch (IOException ioe) {
                 System.out.println(ioe);
             }
