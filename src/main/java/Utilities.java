@@ -7,7 +7,7 @@ public class Utilities extends BaseTest {
             getDriver().findElement(By.id(id)).click();
         } catch (Exception e){
             File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(screenshotFile, new File("~/target/screenshots/screenshot.png"));
+            FileUtils.copyFile(screenshotFile, new File("*/target/screenshots/screenshot.png"));
         }
     }
 
