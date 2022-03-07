@@ -3,7 +3,12 @@ import org.openqa.selenium.By;
 public class Utilities extends BaseTest {
 
     public void ClickElementByID(String id) {
-        getDriver().findElement(By.id(id)).click();
+        try {
+            getDriver().findElement(By.id(id)).click();
+        } catch (Exception e){
+            File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(screenshotFile, new File("~/target/screenshots/screenshot.png"));
+        }
     }
 
     public void ClickElementByName(String name) {
