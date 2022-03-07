@@ -4,7 +4,6 @@ import java.io.IOException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import java.io.IOException;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.WebDriverException;
 
@@ -15,10 +14,14 @@ public class Utilities extends BaseTest {
     public void ClickElementByID(String id) {
         try {
             getDriver().findElement(By.id(id)).click();
-        } catch (WebDriverException e){
-            System.out.println("Dang it. There's an error");
-            File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-            FileHandler.copy(screenshotFile, new File("*/target/screenshots/screenshot.png"));
+        } catch (WebDriverException e) {
+            try {
+                File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+                FileHandler.copy(screenshotFile, new File("*/target/screenshots/screenshot.png"));
+            } catch (IOException ioe) {
+                System.out.println(ioe);
+            }
+
         }
     }
 
