@@ -19,7 +19,7 @@ public class Utilities extends BaseTest {
             System.out.println("Dang it. There's an error");
             File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             FileHandler.copy(screenshotFile, new File("*/target/screenshots/screenshot.png"));
-        } catch IOException(IOException ioe) {
+        } catch (IOException ioe) {
             System.out.println("Dang it. There's an IO exception");
         }
     }
