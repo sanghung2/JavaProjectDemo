@@ -13,7 +13,7 @@ public class Utilities extends BaseTest {
         try {
             getDriver().findElement(By.id(id)).click();
         } catch (error e){
-            System.out.println("Dang it. There's an error")
+            System.out.println("Dang it. There's an error");
             File screenshotFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             FileHandler.copy(screenshotFile, new File("*/target/screenshots/screenshot.png"));
         }
