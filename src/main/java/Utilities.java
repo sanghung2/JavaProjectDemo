@@ -18,11 +18,9 @@ public class Utilities extends BaseTest {
             try {
                 String dir = System.getProperty("user.dir");
                 String pathDir = dir + "/target/screenshots/screenshot.jpg";
-                System.out.println(dir);
-                System.out.println(home);
-                System.out.println(path);
+                System.out.println(pathDir);
                 File screenshotFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
-                FileHandler.copy(screenshotFile, new File(path));
+                FileHandler.copy(screenshotFile, new File(pathDir));
             } catch (IOException ioe) {
                 System.out.println(ioe);
             }
