@@ -29,7 +29,7 @@ stages:
             displayName: Build SeleniumGrid
             inputs:
               containerregistrytype: Container Registry
-              dockerComposeFile: docker-compose.yml
+              dockerComposeFile: ~/JavaProjectDemo/docker-compose.yml
               dockerComposeCommand: 'up -d'
           - task: Maven@3
             displayName: Run Tests
