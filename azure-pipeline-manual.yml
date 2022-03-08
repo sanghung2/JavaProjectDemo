@@ -60,9 +60,7 @@ stages:
             inputs:
               sshEndpoint: 'AWS_EC2'
               sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
-              contents: | 
-                'emailable-report*.html'
-                '*.jpg'
+              contents: '*.png'
               targetFolder: '~/Documents/AutomatedTestingPOC'
               readyTimeout: '20000'
           - task: PublishBuildArtifacts@1
