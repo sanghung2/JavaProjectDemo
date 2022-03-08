@@ -41,6 +41,13 @@ stages:
             inputs:
               Contents: |
                 *target/surefire-reports/*.html
+                *target/surefire-reports/*.png
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - task: CopyFiles@3
+            displayName: 'Copy Screenshots to: $(Build.ArtifactStagingDirectory)'
+            inputs:
+              Contents: |
+                *.png
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - powershell: |
               Write-Host "Setting up the date time for build variable"
@@ -67,6 +74,10 @@ stages:
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
               artifactName: Test Result
+          - task: PublishBuildArtifacts@2
+            inputs:
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/'
+              artifactName: Test Result Screenshots
 #            displayName: Email Test Results
 #            inputs:
 #              sendgridkey: '$(SendKeyToken)'
