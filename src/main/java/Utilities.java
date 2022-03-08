@@ -22,8 +22,6 @@ public class Utilities extends BaseTest {
                 File screenshotFile = ((TakesScreenshot)getDriver()).getScreenshotAs(OutputType.FILE);
                 System.out.println(screenshotFile);
                 FileHandler.copy(screenshotFile, new File(pathDir));
-            } catch (IOException ioe) {
-                System.out.println(ioe);
             }
         }
     }
