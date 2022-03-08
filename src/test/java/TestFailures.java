@@ -90,4 +90,4 @@ public class TestFailures extends BaseTest {
     // close application
         getDriver().quit();
     }
-
+}
