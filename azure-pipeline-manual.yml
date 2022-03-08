@@ -41,7 +41,6 @@ stages:
             inputs:
               Contents: |
                 *target/surefire-reports/*.html
-                *target/surefire-reports/*.png
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - task: CopyFiles@2
             displayName: 'Copy Screenshots to: $(Build.ArtifactStagingDirectory)'
@@ -76,7 +75,7 @@ stages:
               artifactName: Test Result
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/screenshots/'
               artifactName: Test Result Screenshots
 #            displayName: Email Test Results
 #            inputs:
