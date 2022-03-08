@@ -16,10 +16,9 @@ parameters:
   - name: pomFile
     type: string
     default: 'pom.xml'
+steps:
+  - checkout: MyPowershellRepo
 stages:
-  - stage: Checkout
-    - checkout: self
-    - checkout: MyPowershellRepo
   - stage: Build
     jobs:
       - job:
