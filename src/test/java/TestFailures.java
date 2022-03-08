@@ -83,11 +83,11 @@ public class TestFailures extends BaseTest {
                 System.out.println(screenshotFile);
                 FileHandler.copy(screenshotFile, new File(pathDir));
                 System.out.println("Screenshot taken");
-            catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("Exception while taking screenshot "+e.getMessage());
-                }
-            } 
-        }
+            }
+        } 
     // close application
         getDriver().quit();
     }
+
