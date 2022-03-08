@@ -73,10 +73,6 @@ stages:
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
               artifactName: Test Result
-          - task: PublishBuildArtifacts@1
-            inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/screenshot.png'
-              artifactName: Test Result Screenshots
 #            displayName: Email Test Results
 #            inputs:
 #              sendgridkey: '$(SendKeyToken)'
