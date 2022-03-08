@@ -16,14 +16,14 @@ parameters:
   - name: pomFile
     type: string
     default: 'pom.xml'
-steps:
-  - checkout: MyPowershellRepo
+
 stages:
   - stage: Build
     jobs:
       - job:
         displayName: Build and Run Tests
         steps:
+          - checkout: MyPowershellRepo
           - task: DockerCompose@0
             displayName: Build SeleniumGrid
             inputs:
