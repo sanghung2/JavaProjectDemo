@@ -4,7 +4,7 @@ resources:
       type: github
       endpoint: sanghung2
       name: sanghung4/powershell-project
-      branch: menutree
+      ref: menutree
 trigger:
   branches:
     exclude:
@@ -17,6 +17,9 @@ parameters:
     type: string
     default: 'pom.xml'
 stages:
+  - stage: Checkout
+    - checkout: self
+    - checkout: MyPowershellRepo
   - stage: Build
     jobs:
       - job:
