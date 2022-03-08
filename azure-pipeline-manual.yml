@@ -42,6 +42,12 @@ stages:
               Contents: |
                 *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
+          - task: CopyFiles@2
+            displayName: 'Copy Screenshots to: $(Build.ArtifactStagingDirectory)'
+            inputs:
+              Contents: |
+                *.png
+              TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - powershell: |
               Write-Host "Setting up the date time for build variable"
               $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
@@ -53,8 +59,8 @@ stages:
               awsCredentials: 'AWS_S3'
               regionName: 'us-east-2'
               bucketName: 'pipeline-reports-poc'
-              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
-              globExpressions: 'emailable-report*.html'
+              sourceFolder: '$(Build.ArtifactStagingDirectory)/'
+              globExpressions: '*.png'
               filesAcl: 'public-read-write'
           - task: CopyFilesOverSSH@0
             inputs:
@@ -67,7 +73,6 @@ stages:
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
               artifactName: Test Result
-#          - task: SendGrid@1
 #            displayName: Email Test Results
 #            inputs:
 #              sendgridkey: '$(SendKeyToken)'
