@@ -1,3 +1,9 @@
+resources:
+  repositories:
+    repository: MyPowershellRepo
+    type: github
+    endpoint: sanghung2
+    name: sanghung4/powershell-project
 trigger:
   branches:
     exclude:
