@@ -61,7 +61,7 @@ public class TestFailures extends BaseTest {
    @Test
    //This test will fail
    public void RandomTest10() {
-       utilities.NavigateToURL("www.google.com");
+       utilities.NavigateToURL("www.yahoo.com");
        utilities.ClickElementByID("hello fail");
    }
 }

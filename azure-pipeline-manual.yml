@@ -59,14 +59,14 @@ stages:
               awsCredentials: 'AWS_S3'
               regionName: 'us-east-2'
               bucketName: 'pipeline-reports-poc'
-              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
-              globExpressions: 'emailable-report*.html'
+              sourceFolder: '$(Build.ArtifactStagingDirectory)/'
+              globExpressions: '*.png'
               filesAcl: 'public-read-write'
           - task: CopyFilesOverSSH@0
             inputs:
               sshEndpoint: 'AWS_EC2'
               sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
-              contents: '*.png'
+              contents: 'emailable-report*.html'
               targetFolder: '~/Documents/AutomatedTestingPOC'
               readyTimeout: '20000'
           - task: PublishBuildArtifacts@1
@@ -75,7 +75,7 @@ stages:
               artifactName: Test Result
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)/screenshots/'
+              pathToPublish: '$(Build.ArtifactStagingDirectory)/screenshot.png'
               artifactName: Test Result Screenshots
 #            displayName: Email Test Results
 #            inputs:
