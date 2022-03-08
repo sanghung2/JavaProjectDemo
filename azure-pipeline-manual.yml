@@ -4,6 +4,7 @@ resources:
       type: github
       endpoint: sanghung2
       name: sanghung4/powershell-project
+      branch: menutree
 trigger:
   branches:
     exclude:
