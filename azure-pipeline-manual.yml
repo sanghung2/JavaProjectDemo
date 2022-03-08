@@ -23,6 +23,7 @@ stages:
       - job:
         displayName: Build and Run Tests
         steps:
+          - checkout: self
           - checkout: MyPowershellRepo
           - task: DockerCompose@0
             displayName: Build SeleniumGrid
