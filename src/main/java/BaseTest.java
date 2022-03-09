@@ -7,7 +7,7 @@ import java.net.URL;
 
 public class BaseTest {
 
-    protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
+    protected static ThreadLocal<ChromeDriver> driver = new ThreadLocal<>();
     public CapabilitiesOptions capabilitiesOptions = new CapabilitiesOptions();
 
     @BeforeMethod
