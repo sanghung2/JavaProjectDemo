@@ -24,54 +24,54 @@ public class TestFailures extends BaseTest {
         System.out.println("Navigated to page");
     }
 
-   @Test
-   public void RandomTest3() {
-       utilities.NavigateToURL("www.google.com");
-       System.out.println("Navigated to page");
-   }
+//    @Test
+//    public void RandomTest3() {
+//        utilities.NavigateToURL("www.google.com");
+//        System.out.println("Navigated to page");
+//    }
 
-   @Test
-   public void RandomTest4() {
-       utilities.NavigateToURL("www.google.com");
-       System.out.println("Navigated to page");
-   }
+//    @Test
+//    public void RandomTest4() {
+//        utilities.NavigateToURL("www.google.com");
+//        System.out.println("Navigated to page");
+//    }
 
-   @Test
-   public void RandomTest5() {
-       utilities.NavigateToURL("www.google.com");
-       System.out.println("Navigated to page");
-   }
+//    @Test
+//    public void RandomTest5() {
+//        utilities.NavigateToURL("www.google.com");
+//        System.out.println("Navigated to page");
+//    }
 
-   @Test
-   public void RandomTest6() {
-       utilities.NavigateToURL("www.google.com");
-       System.out.println("Navigated to page");
-   }
+//    @Test
+//    public void RandomTest6() {
+//        utilities.NavigateToURL("www.google.com");
+//        System.out.println("Navigated to page");
+//    }
 
-   @Test
-   public void RandomTest7() {
-       utilities.NavigateToURL("www.google.com");
-       System.out.println("Navigated to page");
-   }
+//    @Test
+//    public void RandomTest7() {
+//        utilities.NavigateToURL("www.google.com");
+//        System.out.println("Navigated to page");
+//    }
 
-   @Test
-   public void RandomTest8() {
-       utilities.NavigateToURL("www.google.com");
-       System.out.println("Navigated to page");
-   }
+//    @Test
+//    public void RandomTest8() {
+//        utilities.NavigateToURL("www.google.com");
+//        System.out.println("Navigated to page");
+//    }
 
-   @Test
-   public void RandomTest9() {
-       utilities.NavigateToURL("www.google.com");
-       System.out.println("Navigated to page");
-   }
+//    @Test
+//    public void RandomTest9() {
+//        utilities.NavigateToURL("www.google.com");
+//        System.out.println("Navigated to page");
+//    }
 
-   @Test
-   //This test will fail
-   public void RandomTest10() {
-       utilities.NavigateToURL("www.yahoo.com");
-       utilities.ClickElementByID("hello fail");
-   }
+//    @Test
+//    //This test will fail
+//    public void RandomTest10() {
+//        utilities.NavigateToURL("www.yahoo.com");
+//        utilities.ClickElementByID("hello fail");
+//    }
 
    @AfterMethod
    public void tearDown(ITestResult result) {
