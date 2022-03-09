@@ -14,8 +14,9 @@ public class BaseTest {
     @Parameters(value = {"browser"})
     public void SetUp(String browser) throws MalformedURLException {
         //Using local Docker container to run tests on Selenium Grid
-        driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-                capabilitiesOptions.getCapabilities(browser)));
+//        driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+//                capabilitiesOptions.getCapabilities(browser)));
+
 
         //Using Kubernetes to run tests on Selenium Grid
 //        driver.set(new RemoteWebDriver(new URL("http://127.0.0.1:8080/wd/hub"),
@@ -24,7 +25,9 @@ public class BaseTest {
     }
 
     public WebDriver getDriver() {
-        return driver.get();
+        System.setProperty("webdriver.chrome.driver", "Utilities/chromedriver");
+        WebDriver driver = new ChromeDriver();
+        return driver;
     }
 
     @AfterMethod
