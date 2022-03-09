@@ -7,15 +7,15 @@ import java.net.URL;
 
 public class BaseTest {
 
-    protected static ThreadLocal<ChromeDriver> driver = new ThreadLocal<>();
+    protected static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
     public CapabilitiesOptions capabilitiesOptions = new CapabilitiesOptions();
 
     @BeforeMethod
     @Parameters(value = {"browser"})
     public void SetUp(String browser) throws MalformedURLException {
         //Using local Docker container to run tests on Selenium Grid
-//        driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
-//                capabilitiesOptions.getCapabilities(browser)));
+       driver.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),
+               capabilitiesOptions.getCapabilities(browser)));
 
 
         //Using Kubernetes to run tests on Selenium Grid
@@ -25,9 +25,7 @@ public class BaseTest {
     }
 
     public WebDriver getDriver() {
-        System.setProperty("webdriver.chrome.driver", "Utilities/chromedriver");
-        WebDriver driver = new ChromeDriver();
-        return driver;
+        return driver.get();
     }
 
     @AfterMethod
