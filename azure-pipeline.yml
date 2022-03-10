@@ -13,23 +13,35 @@ parameters:
   - name: pomFile
     type: string
     default: 'pom.xml'
+  - name: env
+    type: string
+    default: 'Dev'
+  - name: tags
+    type: string
+    default: ''
+  - name: instances
+    type: integer
+    default: 1
+  - name: browser
+    type: string
+    default: 'Chrome'
 stages:
   - stage: Build
     jobs:
       - job:
         displayName: Build and Run Tests
         steps:
-          - task: SonarQubePrepare@5
-            inputs:
-              SonarQube: 'sonarqube'
-              scannerMode: 'CLI'
-              configMode: 'file'
-              configFile: 'sonar-scanner.properties'
-              extraProperties: 'sonar.projectKey=JavaProjectDemo'
-          - powershell: |
-              $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
-              Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
-            displayName: Set SonarScanner Params
+          # - task: SonarQubePrepare@5
+          #   inputs:
+          #     SonarQube: 'sonarqube'
+          #     scannerMode: 'CLI'
+          #     configMode: 'file'
+          #     configFile: 'sonar-scanner.properties'
+          #     extraProperties: 'sonar.projectKey=JavaProjectDemo'
+          # - powershell: |
+          #     $params = "$env:SONARQUBE_SCANNER_PARAMS" -replace '"sonar.branch.name":"[\w/,-.]*"\,?'
+          #     Write-Host "##vso[task.setvariable variable=SONARQUBE_SCANNER_PARAMS]$params"
+          #   displayName: Set SonarScanner Params
           - task: DockerCompose@0
             displayName: Build SeleniumGrid
             inputs:
@@ -51,10 +63,10 @@ stages:
               sonarQubeRunAnalysis: false
               sqMavenPluginVersionChoice: 'latest'
             continueOnError: true
-          - task: SonarQubeAnalyze@4
-          - task: SonarQubePublish@5
-            inputs:
-              pollingTimeoutSec: '300'
+          # - task: SonarQubeAnalyze@4
+          # - task: SonarQubePublish@5
+          #   inputs:
+          #     pollingTimeoutSec: '300'
           - task: CopyFiles@2
             displayName: Copy TestResult Files
             inputs:
@@ -75,13 +87,13 @@ stages:
               sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
               globExpressions: 'emailable-report*.html'
               filesAcl: 'public-read-write'
-          - task: CopyFilesOverSSH@0
-            inputs:
-              sshEndpoint: 'AWS_EC2'
-              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
-              contents: 'emailable-report*.html'
-              targetFolder: '~/Documents/AutomatedTestingPOC'
-              readyTimeout: '20000'
+          # - task: CopyFilesOverSSH@0
+          #   inputs:
+          #     sshEndpoint: 'AWS_EC2'
+          #     sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
+          #     contents: 'emailable-report*.html'
+          #     targetFolder: '~/Documents/AutomatedTestingPOC'
+          #     readyTimeout: '20000'
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
