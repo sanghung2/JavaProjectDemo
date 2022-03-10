@@ -59,8 +59,8 @@ stages:
               awsCredentials: 'AWS_S3'
               regionName: 'us-east-2'
               bucketName: 'pipeline-reports-poc'
-              sourceFolder: '$(Build.ArtifactStagingDirectory)/'
-              globExpressions: '*.png'
+              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
+              globExpressions: '*emailable-report'
               filesAcl: 'public-read-write'
           # - task: CopyFilesOverSSH@0
           #   inputs:
