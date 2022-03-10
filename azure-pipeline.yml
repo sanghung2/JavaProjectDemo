@@ -20,7 +20,7 @@ parameters:
     type: string
     default: ''
   - name: instances
-    type: integer
+    type: number
     default: 1
   - name: browser
     type: string
