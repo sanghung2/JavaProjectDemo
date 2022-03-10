@@ -53,8 +53,8 @@ stages:
             continueOnError: true
           # - task: SonarQubeAnalyze@4
           # - task: SonarQubePublish@5
-            inputs:
-              pollingTimeoutSec: '300'
+          #   inputs:
+          #     pollingTimeoutSec: '300'
           - task: CopyFiles@2
             displayName: Copy TestResult Files
             inputs:
