@@ -13,6 +13,18 @@ parameters:
   - name: pomFile
     type: string
     default: 'pom.xml'
+  - name: env
+    type: string
+    default: 'Dev'
+  - name: tags
+    type: string
+    default: ''
+  - name: instances
+    type: integer
+    default: 1
+  - name: browser
+    type: string
+    default: 'Chrome'
 stages:
   - stage: Build
     jobs:
