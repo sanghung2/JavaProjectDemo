@@ -38,12 +38,12 @@ stages:
       - job:
         displayName: Build and Run Tests
         steps:
-          - task: DockerCompose@0
-            displayName: Build SeleniumGrid
-            inputs:
-              containerregistrytype: Container Registry
-              dockerComposeFile: docker-compose.yml
-              dockerComposeCommand: 'up -d'
+          # - task: DockerCompose@0
+          #   displayName: Build SeleniumGrid
+          #   inputs:
+          #     containerregistrytype: Container Registry
+          #     dockerComposeFile: docker-compose.yml
+          #     dockerComposeCommand: 'up -d'
           - task: Maven@3
             displayName: Run Tests
             inputs:
@@ -71,32 +71,14 @@ stages:
               Write-Host "##vso[task.setvariable variable=date]$date"
               Rename-Item -Path "$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html" -NewName "emailable-report-$date.html"
             displayName: Set TimeStamp
-          - task: S3Upload@1
-            inputs:
-              awsCredentials: 'AWS_S3'
-              regionName: 'us-east-2'
-              bucketName: 'pipeline-reports-poc'
-              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
-              globExpressions: 'emailable-report*.html'
-              filesAcl: 'public-read-write'
           # - task: CopyFilesOverSSH@0
           #   inputs:
-          #     sshEndpoint: 'AWS_EC2'
+          #     sshEndpoint: ''
           #     sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
           #     contents: 'emailable-report*.html'
-          #     targetFolder: '~/Documents/AutomatedTestingPOC'
+          #     targetFolder: '~/'
           #     readyTimeout: '20000'
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
               artifactName: Test Result
-#           - task: SendGrid@1
-#             displayName: Email Test Results
-#             inputs:
-#               sendgridkey: '$(SendKeyToken)'
-#               to: 'sangvhung@gmail.com'
-#               from: 'exthung.sang@bcg.com'
-#               subject: 'Test Result Report'
-#               htmlbody: 'Build Complete'
-#               addattachment: true
-#               attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'

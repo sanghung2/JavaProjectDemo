@@ -54,43 +54,20 @@ stages:
               Contents: |
                 *target/surefire-reports/*.html
               TargetFolder: '$(Build.ArtifactStagingDirectory)'
-          - task: CopyFiles@2
-            displayName: 'Copy Screenshots to: $(Build.ArtifactStagingDirectory)'
-            inputs:
-              Contents: |
-                *.png
-              TargetFolder: '$(Build.ArtifactStagingDirectory)'
           - powershell: |
               Write-Host "Setting up the date time for build variable"
               $date=$(Get-Date -Format MM-dd-yyyy-hhmmss)
               Write-Host "##vso[task.setvariable variable=date]$date"
               Rename-Item -Path "$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html" -NewName "emailable-report-$date.html"
             displayName: Set TimeStamp
-          - task: S3Upload@1
-            inputs:
-              awsCredentials: 'AWS_S3'
-              regionName: 'us-east-2'
-              bucketName: 'pipeline-reports-poc'
-              sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
-              globExpressions: '*emailable-report'
-              filesAcl: 'public-read-write'
           # - task: CopyFilesOverSSH@0
           #   inputs:
-          #     sshEndpoint: 'AWS_EC2'
+          #     sshEndpoint: ''
           #     sourceFolder: '$(Build.ArtifactStagingDirectory)/target/surefire-reports'
           #     contents: 'emailable-report*.html'
-          #     targetFolder: '~/Documents/AutomatedTestingPOC'
+          #     targetFolder: '~/'
           #     readyTimeout: '20000'
           - task: PublishBuildArtifacts@1
             inputs:
               pathToPublish: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/'
               artifactName: Test Result
-#            displayName: Email Test Results
-#            inputs:
-#              sendgridkey: '$(SendKeyToken)'
-#              to: 'sangvhung@gmail.com'
-#              from: 'exthung.sang@bcg.com'
-#              subject: 'Test Result Report'
-#              htmlbody: 'Build Completed'
-#              addattachment: true
-#              attachment: '$(Build.ArtifactStagingDirectory)/target/surefire-reports/emailable-report.html'
