@@ -1,0 +1,16 @@
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: agent-scaler
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "agent"
+  minReplicaCount: 1
+  maxReplicaCount: 3
+  triggers:
+    - type: azure-pipelines
+      metadata:
+        poolID: "1"
+        organizationURLFromEnv: ""
+        personalAccessTokenFromEnv: ""

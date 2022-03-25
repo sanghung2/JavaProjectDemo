@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: agent
+  labels:
+    app.kubernetes.io/name: azure-pipelines-agent
+    app.kubernetes.io/instance: agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: azure-pipelines-agent
+      app.kubernetes.io/instance: agent
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: azure-pipelines-agent
+        app.kubernetes.io/instance: agent
+    spec:
+      containers:
+        - name: azure-pipelines-agent
+          image: "dockeragent:latest"
+          imagePullPolicy: Always
+          env:
+            - name: AZP_AGENT_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.name
+            - name: AZP_URL
+              value: ""
+            - name: AZP_POOL
+              value: "Default"
+            - name: AZP_TOKEN
+              value: ""
