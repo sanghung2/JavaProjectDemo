@@ -25,6 +25,8 @@ stages:
   - stage: Build
     jobs:
       - job:
+        strategy: 
+          parallel: 2 
         displayName: Build and Run Tests
         steps:
           # - task: DockerCompose@0
